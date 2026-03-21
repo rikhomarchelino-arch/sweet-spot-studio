@@ -7,8 +7,8 @@ const HeroSection = () => {
         <img
           src={heroCake}
           alt="The Pound Cake - Premium Bakery"
-          className="w-full h-full object-cover"
-        />
+          className="w-full h-full object-cover" />
+        
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
       </div>
 
@@ -21,15 +21,15 @@ const HeroSection = () => {
         <p className="mt-6 text-lg md:text-xl max-w-2xl text-foreground/80 font-body">
           Crafting premium pound cakes &amp; pastries with love, delivering a rich twist in every bite!
         </p>
-        <button
-          onClick={() => document.getElementById("menu")?.scrollIntoView({ behavior: "smooth" })}
-          className="mt-10 px-8 py-3.5 rounded-full bg-primary text-primary-foreground font-body font-semibold text-sm tracking-wide hover:scale-105 transition-transform duration-300 shadow-lg"
-        >
-          Explore Our Menu
-        </button>
+        
+
+
+
+
+        
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default HeroSection;
