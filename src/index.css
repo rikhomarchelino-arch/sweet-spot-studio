@@ -88,6 +88,43 @@
   animation: marquee 20s linear infinite;
 }
 
+/* Hero text animations */
+@keyframes hero-float-in {
+  0% {
+    opacity: 0;
+    filter: blur(4px);
+    transform: translate(-30px, 20px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0px);
+    transform: translate(0, 0);
+  }
+}
+
+@media (max-width: 768px) {
+  @keyframes hero-float-in {
+    0% {
+      opacity: 0;
+      filter: blur(3px);
+      transform: translate(-16px, 12px);
+    }
+    100% {
+      opacity: 1;
+      filter: blur(0px);
+      transform: translate(0, 0);
+    }
+  }
+}
+
+.animate-hero-title {
+  animation: hero-float-in 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-hero-subtitle {
+  animation: hero-float-in 1s cubic-bezier(0.22, 1, 0.36, 1) 0.25s both;
+}
+
 /* Smooth scroll */
 html {
   scroll-behavior: smooth;
