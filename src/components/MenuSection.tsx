@@ -1,3 +1,5 @@
+import ScrollReveal from "@/components/ScrollReveal";
+import StaggerReveal from "@/components/StaggerReveal";
 import categoryCakes from "@/assets/category-cakes.jpg";
 import categoryBreads from "@/assets/category-breads.jpg";
 import categoryCookies from "@/assets/category-cookies.jpg";
@@ -30,12 +32,14 @@ const MenuSection = () => {
   return (
     <section id="menu" className="py-20 md:py-28 px-6 md:px-12">
       <div className="max-w-6xl mx-auto">
-        <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/40 text-primary text-sm font-body mb-8">
-          <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-          Our Menu
-        </span>
+        <ScrollReveal>
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/40 text-primary text-sm font-body mb-8">
+            <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+            Our Menu
+          </span>
+        </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <StaggerReveal className="grid grid-cols-1 md:grid-cols-2 gap-5" staggerDelay={0.1}>
           {categories.map((cat) => (
             <div
               key={cat.name}
@@ -58,7 +62,7 @@ const MenuSection = () => {
               </div>
             </div>
           ))}
-        </div>
+        </StaggerReveal>
       </div>
     </section>
   );
