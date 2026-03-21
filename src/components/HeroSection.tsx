@@ -160,7 +160,7 @@ const HeroSection = () => {
         </h1>
         <p className="mt-6 text-lg md:text-xl max-w-2xl text-foreground/80 font-body">
           <AnimatedText
-            text="Crafting premium pound cakes & pastries with love, delivering a rich twist in every bite!"
+            text="Crafting premium cakes & pastries delivering with love on every bite!"
             isVisible={isVisible}
             delay={subtitleDelay}
           />
