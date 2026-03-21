@@ -13,20 +13,14 @@ const HeroSection = () => {
       </div>
 
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6">
-        <h1 className="font-display text-6xl md:text-8xl lg:text-9xl font-bold tracking-tight text-foreground drop-shadow-2xl">
+        <h1 className="font-display text-6xl md:text-8xl lg:text-9xl font-bold tracking-tight text-foreground drop-shadow-2xl animate-hero-title">
           THE POUND
           <br />
           <span className="text-primary">CAKE.</span>
         </h1>
-        <p className="mt-6 text-lg md:text-xl max-w-2xl text-foreground/80 font-body">
+        <p className="mt-6 text-lg md:text-xl max-w-2xl text-foreground/80 font-body animate-hero-subtitle">
           Crafting premium pound cakes &amp; pastries with love, delivering a rich twist in every bite!
         </p>
-        
-
-
-
-
-        
       </div>
     </section>);
 
