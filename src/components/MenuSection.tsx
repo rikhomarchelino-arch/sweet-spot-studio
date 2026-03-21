@@ -1,32 +1,7 @@
+import { Link } from "react-router-dom";
 import ScrollReveal from "@/components/ScrollReveal";
 import StaggerReveal from "@/components/StaggerReveal";
-import categoryCakes from "@/assets/category-cakes.jpg";
-import categoryBreads from "@/assets/category-breads.jpg";
-import categoryCookies from "@/assets/category-cookies.jpg";
-import categoryDrinks from "@/assets/category-drinks.jpg";
-
-const categories = [
-  {
-    name: "Cakes",
-    description: "Indulge in our handcrafted cakes, where each slice melts with rich flavor.",
-    image: categoryCakes,
-  },
-  {
-    name: "Breads & Rolls",
-    description: "Experience a fresh twist on classic breads, baked with warmth and care.",
-    image: categoryBreads,
-  },
-  {
-    name: "Cookies",
-    description: "Crispy, buttery cookies with a satisfying crunch in every bite.",
-    image: categoryCookies,
-  },
-  {
-    name: "Drinks",
-    description: "Refresh yourself with our handcrafted beverages to brighten your day.",
-    image: categoryDrinks,
-  },
-];
+import { menuCategories } from "@/data/menuData";
 
 const MenuSection = () => {
   return (
@@ -40,10 +15,11 @@ const MenuSection = () => {
         </ScrollReveal>
 
         <StaggerReveal className="grid grid-cols-1 md:grid-cols-2 gap-5" staggerDelay={0.1}>
-          {categories.map((cat) => (
-            <div
-              key={cat.name}
-              className="group relative overflow-hidden rounded-xl aspect-[16/10] cursor-pointer"
+          {menuCategories.map((cat) => (
+            <Link
+              key={cat.slug}
+              to={`/menu/${cat.slug}`}
+              className="group relative overflow-hidden rounded-xl aspect-[16/10] cursor-pointer block"
               style={{ boxShadow: "var(--shadow-card)" }}
             >
               <img
@@ -60,7 +36,7 @@ const MenuSection = () => {
                   {cat.description}
                 </p>
               </div>
-            </div>
+            </Link>
           ))}
         </StaggerReveal>
       </div>
