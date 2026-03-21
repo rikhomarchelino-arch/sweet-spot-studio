@@ -23,49 +23,82 @@ const AnimatedText = ({
     }
   }, [isVisible, controls]);
 
-  // Split into lines by <br>, then into characters
   const lines = text.split("\n");
-
   let globalIndex = 0;
 
   return (
     <span className={className} aria-label={text}>
-      {lines.map((line, lineIdx) => (
-        <span key={lineIdx}>
-          {line.split("").map((char) => {
-            const i = globalIndex++;
-            return (
-              <motion.span
-                key={`${lineIdx}-${i}`}
-                className="inline-block"
-                style={{ whiteSpace: char === " " ? "pre" : undefined }}
-                initial="hidden"
-                animate={controls}
-                variants={{
-                  hidden: {
-                    y: 30,
-                    opacity: 0,
-                    filter: "blur(2px)",
-                  },
-                  visible: {
-                    y: 0,
-                    opacity: 1,
-                    filter: "blur(0px)",
-                    transition: {
-                      duration: 0.55,
-                      delay: delay + i * 0.03,
-                      ease: [0.25, 0.1, 0.25, 1],
-                    },
-                  },
-                }}
-              >
-                {char}
-              </motion.span>
-            );
-          })}
-          {lineIdx < lines.length - 1 && <br />}
-        </span>
-      ))}
+      {lines.map((line, lineIdx) => {
+        const words = line.split(" ");
+        return (
+          <span key={lineIdx}>
+            {words.map((word, wordIdx) => {
+              const chars = word.split("");
+              const wordElement = (
+                <span key={wordIdx} style={{ display: "inline-block", whiteSpace: "nowrap" }}>
+                  {chars.map((char) => {
+                    const i = globalIndex++;
+                    return (
+                      <motion.span
+                        key={`${lineIdx}-${i}`}
+                        style={{ display: "inline-block" }}
+                        initial="hidden"
+                        animate={controls}
+                        variants={{
+                          hidden: {
+                            y: 30,
+                            opacity: 0,
+                            filter: "blur(2px)",
+                          },
+                          visible: {
+                            y: 0,
+                            opacity: 1,
+                            filter: "blur(0px)",
+                            transition: {
+                              duration: 0.55,
+                              delay: delay + i * 0.03,
+                              ease: [0.25, 0.1, 0.25, 1],
+                            },
+                          },
+                        }}
+                      >
+                        {char}
+                      </motion.span>
+                    );
+                  })}
+                </span>
+              );
+              // Add a space between words (as a separate inline element so wrapping happens here)
+              if (wordIdx < words.length - 1) {
+                globalIndex++; // count the space
+                return (
+                  <span key={`w-${wordIdx}`}>
+                    {wordElement}
+                    <motion.span
+                      style={{ display: "inline", whiteSpace: "pre" }}
+                      initial="hidden"
+                      animate={controls}
+                      variants={{
+                        hidden: { opacity: 0 },
+                        visible: {
+                          opacity: 1,
+                          transition: {
+                            duration: 0.55,
+                            delay: delay + (globalIndex - 1) * 0.03,
+                            ease: [0.25, 0.1, 0.25, 1],
+                          },
+                        },
+                      }}
+                    > </motion.span>
+                  </span>
+                );
+              }
+              return wordElement;
+            })}
+            {lineIdx < lines.length - 1 && <br />}
+          </span>
+        );
+      })}
     </span>
   );
 };
@@ -127,7 +160,7 @@ const HeroSection = () => {
         </h1>
         <p className="mt-6 text-lg md:text-xl max-w-2xl text-foreground/80 font-body">
           <AnimatedText
-            text="Crafting premium pound cakes & pastries with love, delivering a rich twist in every bite!"
+            text="Crafting premium cakes & pastries delivering with love on every bite!"
             isVisible={isVisible}
             delay={subtitleDelay}
           />
