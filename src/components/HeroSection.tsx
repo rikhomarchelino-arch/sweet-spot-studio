@@ -37,8 +37,10 @@ const AnimatedText = ({
             return (
               <motion.span
                 key={`${lineIdx}-${i}`}
-                className="inline-block"
-                style={{ whiteSpace: char === " " ? "pre" : undefined }}
+                style={{
+                  display: "inline-block",
+                  whiteSpace: char === " " ? "pre" : undefined,
+                }}
                 initial="hidden"
                 animate={controls}
                 variants={{
