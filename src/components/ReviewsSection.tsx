@@ -1,4 +1,6 @@
 import { Star } from "lucide-react";
+import ScrollReveal from "@/components/ScrollReveal";
+import StaggerReveal from "@/components/StaggerReveal";
 
 const reviews = [
   {
@@ -22,12 +24,14 @@ const ReviewsSection = () => {
   return (
     <section className="py-20 md:py-28 px-6 md:px-12">
       <div className="max-w-6xl mx-auto">
-        <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/40 text-primary text-sm font-body mb-8">
-          <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-          Reviews
-        </span>
+        <ScrollReveal>
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/40 text-primary text-sm font-body mb-8">
+            <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+            Reviews
+          </span>
+        </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <StaggerReveal className="grid grid-cols-1 md:grid-cols-2 gap-5" staggerDelay={0.1}>
           {reviews.map((review, index) => (
             <div
               key={index}
@@ -49,7 +53,7 @@ const ReviewsSection = () => {
               </p>
             </div>
           ))}
-        </div>
+        </StaggerReveal>
       </div>
     </section>
   );

@@ -1,4 +1,6 @@
 import { Lightbulb, Hammer, Sun } from "lucide-react";
+import ScrollReveal from "@/components/ScrollReveal";
+import StaggerReveal from "@/components/StaggerReveal";
 
 const aboutItems = [
   {
@@ -25,12 +27,14 @@ const AboutSection = () => {
   return (
     <section id="about" className="py-20 md:py-28 px-6 md:px-12">
       <div className="max-w-6xl mx-auto">
-        <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/40 text-primary text-sm font-body mb-8">
-          <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-          About Us
-        </span>
+        <ScrollReveal>
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/40 text-primary text-sm font-body mb-8">
+            <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+            About Us
+          </span>
+        </ScrollReveal>
 
-        <div className="flex flex-col gap-5">
+        <StaggerReveal className="flex flex-col gap-5" staggerDelay={0.1}>
           {aboutItems.map((item) => {
             const Icon = item.icon;
             return (
@@ -55,7 +59,7 @@ const AboutSection = () => {
               </div>
             );
           })}
-        </div>
+        </StaggerReveal>
       </div>
     </section>
   );

@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Phone as PhoneIcon, Mail, MapPin } from "lucide-react";
 import contactHero from "@/assets/contact-hero.jpg";
+import ScrollReveal from "@/components/ScrollReveal";
+import StaggerReveal from "@/components/StaggerReveal";
 
 const contactDetails = [
   { icon: PhoneIcon, title: "Phone", value: "+62 812 3456 7890" },
@@ -26,25 +28,29 @@ const ContactSection = () => {
     <section id="contact" className="py-20 md:py-28 px-6 md:px-12">
       <div className="max-w-6xl mx-auto">
         {/* Contact Hero */}
-        <div className="relative rounded-xl overflow-hidden h-48 md:h-64 mb-12">
-          <img src={contactHero} alt="Contact" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-background/60 flex flex-col items-center justify-center">
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground">
-              CONTACT
-            </h2>
-            <p className="mt-2 text-foreground/70 font-body text-center max-w-md px-4">
-              Got a question or craving? Reach out to us—we'd love to hear from you!
-            </p>
+        <ScrollReveal>
+          <div className="relative rounded-xl overflow-hidden h-48 md:h-64 mb-12">
+            <img src={contactHero} alt="Contact" className="w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-background/60 flex flex-col items-center justify-center">
+              <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground">
+                CONTACT
+              </h2>
+              <p className="mt-2 text-foreground/70 font-body text-center max-w-md px-4">
+                Got a question or craving? Reach out to us—we'd love to hear from you!
+              </p>
+            </div>
           </div>
-        </div>
+        </ScrollReveal>
 
         {/* Contact Details */}
-        <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/40 text-primary text-sm font-body mb-6">
-          <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-          Contact Details
-        </span>
+        <ScrollReveal delay={0.1}>
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/40 text-primary text-sm font-body mb-6">
+            <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+            Contact Details
+          </span>
+        </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-16">
+        <StaggerReveal className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-16" staggerDelay={0.1}>
           {contactDetails.map((detail) => {
             const Icon = detail.icon;
             return (
@@ -69,54 +75,58 @@ const ContactSection = () => {
               </div>
             );
           })}
-        </div>
+        </StaggerReveal>
 
         {/* Contact Form */}
-        <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/40 text-primary text-sm font-body mb-6">
-          <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-          Contact Form
-        </span>
+        <ScrollReveal delay={0.05}>
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/40 text-primary text-sm font-body mb-6">
+            <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+            Contact Form
+          </span>
+        </ScrollReveal>
 
-        <form onSubmit={handleSubmit} className="max-w-3xl space-y-5">
-          {[
-            { label: "Name", key: "name", type: "text", placeholder: "Your name" },
-            { label: "Phone", key: "phone", type: "tel", placeholder: "+62 xxx xxxx xxxx" },
-            { label: "Email", key: "email", type: "email", placeholder: "your@email.com" },
-          ].map((field) => (
-            <div key={field.key}>
-              <label className="block text-sm font-body text-foreground/80 mb-2">
-                {field.label}
-              </label>
-              <input
-                type={field.type}
-                placeholder={field.placeholder}
-                value={formData[field.key as keyof typeof formData]}
+        <ScrollReveal delay={0.15}>
+          <form onSubmit={handleSubmit} className="max-w-3xl space-y-5">
+            {[
+              { label: "Name", key: "name", type: "text", placeholder: "Your name" },
+              { label: "Phone", key: "phone", type: "tel", placeholder: "+62 xxx xxxx xxxx" },
+              { label: "Email", key: "email", type: "email", placeholder: "your@email.com" },
+            ].map((field) => (
+              <div key={field.key}>
+                <label className="block text-sm font-body text-foreground/80 mb-2">
+                  {field.label}
+                </label>
+                <input
+                  type={field.type}
+                  placeholder={field.placeholder}
+                  value={formData[field.key as keyof typeof formData]}
+                  onChange={(e) =>
+                    setFormData((prev) => ({ ...prev, [field.key]: e.target.value }))
+                  }
+                  className="w-full px-4 py-3 rounded-lg bg-card border border-border text-foreground font-body placeholder:text-muted-foreground focus:outline-none focus:border-primary/50 transition-colors"
+                />
+              </div>
+            ))}
+            <div>
+              <label className="block text-sm font-body text-foreground/80 mb-2">Message</label>
+              <textarea
+                rows={4}
+                placeholder="Type your message here..."
+                value={formData.message}
                 onChange={(e) =>
-                  setFormData((prev) => ({ ...prev, [field.key]: e.target.value }))
+                  setFormData((prev) => ({ ...prev, message: e.target.value }))
                 }
-                className="w-full px-4 py-3 rounded-lg bg-card border border-border text-foreground font-body placeholder:text-muted-foreground focus:outline-none focus:border-primary/50 transition-colors"
+                className="w-full px-4 py-3 rounded-lg bg-card border border-border text-foreground font-body placeholder:text-muted-foreground focus:outline-none focus:border-primary/50 transition-colors resize-y"
               />
             </div>
-          ))}
-          <div>
-            <label className="block text-sm font-body text-foreground/80 mb-2">Message</label>
-            <textarea
-              rows={4}
-              placeholder="Type your message here..."
-              value={formData.message}
-              onChange={(e) =>
-                setFormData((prev) => ({ ...prev, message: e.target.value }))
-              }
-              className="w-full px-4 py-3 rounded-lg bg-card border border-border text-foreground font-body placeholder:text-muted-foreground focus:outline-none focus:border-primary/50 transition-colors resize-y"
-            />
-          </div>
-          <button
-            type="submit"
-            className="w-full py-3.5 rounded-lg bg-primary text-primary-foreground font-body font-semibold hover:scale-[1.02] transition-transform duration-300"
-          >
-            Submit
-          </button>
-        </form>
+            <button
+              type="submit"
+              className="w-full py-3.5 rounded-lg bg-primary text-primary-foreground font-body font-semibold hover:scale-[1.02] transition-transform duration-300"
+            >
+              Submit
+            </button>
+          </form>
+        </ScrollReveal>
       </div>
     </section>
   );
