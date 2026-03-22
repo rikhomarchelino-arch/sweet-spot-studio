@@ -32,14 +32,6 @@ export const menuCategories: MenuCategory[] = [
     image: categoryPastries,
     subCategories: [
       {
-        title: "Pound Cakes",
-        items: [
-          { name: "Earl Grey Pound Cake", price: "30", tags: ["Sweet", "Soft", "Zesty"] },
-          { name: "Cookies & Cream Pound Cake", price: "30", tags: ["Sweet", "Dense", "Caramelized"] },
-          { name: "Chocolate Pound Cake", price: "30", tags: ["Rich", "Moist", "Comforting"] },
-        ],
-      },
-      {
         title: "Croissants",
         items: [
           { name: "Triple Cheese Almond Croissant", price: "28", tags: ["Creamy", "Flaky", "Nutty"] },
@@ -81,6 +73,14 @@ export const menuCategories: MenuCategory[] = [
     description: "Indulge in our handcrafted cakes and cheesecakes, where each slice melts with rich, premium flavor.",
     image: categoryCakes,
     subCategories: [
+      {
+        title: "Pound Cakes",
+        items: [
+          { name: "Earl Grey Pound Cake", price: "30", tags: ["Sweet", "Soft", "Zesty"] },
+          { name: "Cookies & Cream Pound Cake", price: "30", tags: ["Sweet", "Dense", "Caramelized"] },
+          { name: "Chocolate Pound Cake", price: "30", tags: ["Rich", "Moist", "Comforting"] },
+        ],
+      },
       {
         title: "Cheesecakes",
         items: [
