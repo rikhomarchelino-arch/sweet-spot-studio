@@ -92,18 +92,10 @@ export const menuCategories: MenuCategory[] = [
       {
         title: "Whole Cakes",
         items: [
-          { name: "Lychee Strawberry Shortcake", price: "255", description: "Whole Cake", tags: ["Sweet", "Fruity"] },
-          { name: "Earl Grey", price: "315", description: "Whole Cake" },
-          { name: "Lemon Mandarin", price: "235", description: "Whole Cake" },
+          { name: "Lychee Strawberry Shortcake", price: "255/40", description: "Whole Cake/Sliced", tags: ["Sweet", "Fruity"] },
+          { name: "Earl Grey", price: "315/40", description: "Whole Cake/Sliced" },
+          { name: "Lemon Mandarin", price: "235/40", description: "Whole Cake/Sliced" },
           { name: "Jasmine", price: "315", description: "Whole Cake" },
-        ],
-      },
-      {
-        title: "Sliced Cakes",
-        items: [
-          { name: "Lychee Strawberry Shortcake", price: "40", description: "Per slice" },
-          { name: "Earl Grey", price: "40", description: "Per slice" },
-          { name: "Lemon Mandarin", price: "40", description: "Per slice" },
         ],
       },
     ],
