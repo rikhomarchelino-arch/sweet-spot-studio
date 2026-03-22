@@ -33,14 +33,12 @@ const MenuItemRow = ({ item, index, isRevealed }: MenuItemRowProps) => {
         }
         {item.tags && item.tags.length > 0 &&
         <div className="mt-1.5 flex flex-wrap gap-1.5">
-            {item.tags.map((tag) => {}
-
-
-
-
-
-
-          )}
+              <span
+                key={tag}
+                className="px-2 py-0.5 rounded-full bg-primary/10 text-primary text-[10px] font-medium uppercase tracking-wider">
+                {tag}
+              </span>
+            ))}
           </div>
         }
       </div>
