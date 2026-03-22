@@ -38,17 +38,8 @@ export const menuCategories: MenuCategory[] = [
           { name: "Triple Cheese Croissant", price: "35", tags: ["Cheesy", "Flaky"] },
           { name: "Pistachio Kunafe Croissant", price: "40", tags: ["Flaky", "Nutty", "Sweet", "Crunchy"] },
           { name: "Korean Garlic Croissant", price: "35", tags: ["Garlic", "Flaky", "Creamy"] },
-          { name: "Pain Au Chocolate", price: "25", tags: ["Buttery", "Flaky", "Chocolaty"] },
           { name: "Butter Croissant", price: "20", tags: ["Buttery", "Flaky", "The O.G"] },
           { name: "Ham & Cheese Croissant", price: "32.5", tags: ["Cheesy", "Meaty", "Flaky"] },
-          { name: "Blueberry Croissant", price: "32.5", tags: ["Sweet", "Flaky", "Fruity"] },
-        ],
-      },
-      {
-        title: "Canelé",
-        items: [
-          { name: "Original Canelé", price: "25", tags: ["Caramelized", "Soft", "O.G Taste"] },
-          { name: "Ube Canelé", price: "32.5", tags: ["Cheesy", "Soft", "Addictive"] },
         ],
       },
       {
@@ -62,7 +53,8 @@ export const menuCategories: MenuCategory[] = [
           { name: "Yuzu Madeleine", price: "17.5", tags: ["Sweet Sour", "Soft", "Refreshing"] },
           { name: "Cinnamon Monkey Bread", price: "25", tags: ["Sweet", "Spices", "Flaky"] },
           { name: "Rusty Mochi Brownchiz", price: "50", tags: ["Stretchy", "Cheesy", "Fudgy"] },
-          { name: "Mochi Monkey Bread", price: "25", tags: ["Sweet", "Spices", "Flaky"] },
+          { name: "Pain Au Chocolate", price: "25", tags: ["Buttery", "Flaky", "Chocolaty"] },
+          { name: "Original Canelé", price: "25", tags: ["Caramelized", "Soft", "O.G Taste"] },
         ],
       },
     ],
