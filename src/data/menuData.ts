@@ -71,6 +71,7 @@ export const menuCategories: MenuCategory[] = [
           { name: "Earl Grey Pound Cake", price: "30", tags: ["Sweet", "Soft", "Zesty"] },
           { name: "Cookies & Cream Pound Cake", price: "30", tags: ["Sweet", "Dense", "Caramelized"] },
           { name: "Chocolate Pound Cake", price: "30", tags: ["Rich", "Moist", "Comforting"] },
+          { name: "Biscoff Pound Cake", price: "30", tags: ["Sweet", "Dense", "Caramelized"] },
         ],
       },
       {
@@ -84,7 +85,7 @@ export const menuCategories: MenuCategory[] = [
       {
         title: "Whole Cakes",
         items: [
-          { name: "Lychee Strawberry Shortcake", price: "255/40", description: "Whole Cake/Sliced", tags: ["Sweet", "Fruity"] },
+          { name: "Lychee Strawberry Shortcake", price: "255/40", description: "Whole Cake/Sliced" },
           { name: "Earl Grey", price: "315/40", description: "Whole Cake/Sliced" },
           { name: "Lemon Mandarin", price: "235/40", description: "Whole Cake/Sliced" },
           { name: "Jasmine", price: "315", description: "Whole Cake" },
