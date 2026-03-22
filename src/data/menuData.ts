@@ -252,7 +252,6 @@ export const menuCategories: MenuCategory[] = [
           { name: "Balinese Fried Rice", price: "42.5", description: "Basegenap Fried Rice, Serai Limo Chicken, Kecombrang, Sunny Side Up" },
           { name: "Ayam Betutu", price: "47.5", description: "Betutu Fried Chicken, Urap, Rice, Sambal Matah, Sambal Mbe" },
           { name: "Korean Beef Bowl", price: "60", description: "Beef Short Plate, Rice, Korean Sauce, Mushroom, Poached Egg" },
-          { name: "Omurice", price: "40" },
         ],
       },
       {
@@ -266,6 +265,7 @@ export const menuCategories: MenuCategory[] = [
           { name: "Grilled Chicken Thai", price: "40" },
           { name: "Chicken Katsu Curry", price: "40" },
           { name: "Creamy Chicken Mushroom", price: "50" },
+          { name: "Omurice", price: "40" },
         ],
       },
       {
