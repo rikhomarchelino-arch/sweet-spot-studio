@@ -140,7 +140,7 @@ export const menuCategories: MenuCategory[] = [
           { name: "Matcha Blossom", price: "45" },
           { name: "Matcha Parfait", price: "45" },
           { name: "Matcha Pistachio", price: "45" },
-          { name: "Matcha Yuzu", price: "45", description: "Matcha, Lemonade, Yuzu, Soda Water" },
+          
         ],
       },
       {
@@ -148,7 +148,7 @@ export const menuCategories: MenuCategory[] = [
         items: [
           { name: "Cendol Chocomalt", price: "35", description: "Pandan, Premium Chocolate, Secret Milk, Ice Cream, Traditional Cendol" },
           { name: "Amarena Cherry", price: "35", description: "Amarena Cherry, Secret Milk, Ice Cream" },
-          { name: "Chocomalt", price: "35", description: "Premium Chocolate, Secret Milk, Ice Cream" },
+          
           { name: "Delimington", price: "38.5", description: "Espresso, Premium Chocolate, Almond Milk, Ice Cream" },
           { name: "Ube & Cheese", price: "35", description: "Homemade Ube, Cream Cheese, Secret Milk, Ice Cream" },
           { name: "Strawberry Shortcake", price: "35", description: "Strawberry, Lychee, Peanut, Cheese, Skimmed Milk, Ice Cream" },
@@ -161,6 +161,7 @@ export const menuCategories: MenuCategory[] = [
           { name: "Osmanthus Guava", price: "28", description: "Osmanthus, Red Apple Cider, Guava, Lemon" },
           { name: "P & P", price: "28", description: "Pandan, Jasmine Tea, Pineapple Juice, Coconut Seltzer" },
           { name: "Peach & Passion", price: "30", description: "Peach, Passionfruit, Lemonade, Rosemary, Soda Water" },
+          { name: "Matcha Yuzu", price: "45", description: "Matcha, Lemonade, Yuzu, Soda Water" },
         ],
       },
       {
