@@ -5,9 +5,9 @@ import StaggerReveal from "@/components/StaggerReveal";
 
 const faqData = [
   {
-    question: "Do you offer gluten-free or vegan options?",
+    question: "Are all products available every day?",
     answer:
-      "Yes, we offer a variety of gluten-free and vegan items, including cakes and cookies, crafted with the same fresh, bold flavours as our regular products.",
+      "Our menu may vary daily depending on availability. We recommend visiting early or checking with us for specific items.",
   },
   {
     question: "How fresh are your baked items?",
