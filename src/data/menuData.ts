@@ -26,40 +26,6 @@ export interface MenuCategory {
 
 export const menuCategories: MenuCategory[] = [
   {
-    slug: "pastries",
-    name: "Pastries",
-    description: "Fun fact! All of our Pastries were made with special recipes by our Master Patissier with comfort and taste as a priority.",
-    image: categoryPastries,
-    subCategories: [
-      {
-        title: "Croissants",
-        items: [
-          { name: "Almond Croissant", price: "28", tags: ["Creamy", "Flaky", "Nutty"] },
-          { name: "Triple Cheese Croissant", price: "35", tags: ["Cheesy", "Flaky"] },
-          { name: "Pistachio Kunafe Croissant", price: "40", tags: ["Flaky", "Nutty", "Sweet", "Crunchy"] },
-          { name: "Korean Garlic Croissant", price: "35", tags: ["Garlic", "Flaky", "Creamy"] },
-          { name: "Butter Croissant", price: "20", tags: ["Buttery", "Flaky", "The O.G"] },
-          { name: "Ham & Cheese Croissant", price: "32.5", tags: ["Cheesy", "Meaty", "Flaky"] },
-        ],
-      },
-      {
-        title: "Specialty",
-        items: [
-          { name: "Red Velvet Bliss", price: "40", tags: ["Flaky", "Sweet", "Cheesy"] },
-          { name: "Crookie", price: "35", tags: ["Caramelized", "Nutty"] },
-          { name: "Ferrero Forest", price: "40", tags: ["Sweet", "Bitter", "Chocolaty"] },
-          { name: "Dochi", price: "32", tags: ["Sweet", "Soft", "Chewy"] },
-          { name: "Kouign Amann", price: "20", tags: ["Buttery", "Flaky", "Sweet"] },
-          { name: "Yuzu Madeleine", price: "17.5", tags: ["Sweet Sour", "Soft", "Refreshing"] },
-          { name: "Cinnamon Monkey Bread", price: "25", tags: ["Sweet", "Spices", "Flaky"] },
-          { name: "Rusty Mochi Brownchiz", price: "50", tags: ["Stretchy", "Cheesy", "Fudgy"] },
-          { name: "Pain Au Chocolate", price: "25", tags: ["Buttery", "Flaky", "Chocolaty"] },
-          { name: "Original Canelé", price: "25", tags: ["Caramelized", "Soft", "O.G Taste"] },
-        ],
-      },
-    ],
-  },
-  {
     slug: "cakes",
     name: "Cakes",
     description: "Indulge in our handcrafted cakes and cheesecakes, where each slice melts with rich, premium flavor.",
@@ -89,6 +55,40 @@ export const menuCategories: MenuCategory[] = [
           { name: "Earl Grey", price: "315/40", description: "Whole Cake/Sliced" },
           { name: "Lemon Mandarin", price: "235/40", description: "Whole Cake/Sliced" },
           { name: "Jasmine", price: "315", description: "Whole Cake" },
+        ],
+      },
+    ],
+  },
+  {
+    slug: "pastries",
+    name: "Pastries",
+    description: "Fun fact! All of our Pastries were made with special recipes by our Master Patissier with comfort and taste as a priority.",
+    image: categoryPastries,
+    subCategories: [
+      {
+        title: "Croissants",
+        items: [
+          { name: "Almond Croissant", price: "28", tags: ["Creamy", "Flaky", "Nutty"] },
+          { name: "Triple Cheese Croissant", price: "35", tags: ["Cheesy", "Flaky"] },
+          { name: "Pistachio Kunafe Croissant", price: "40", tags: ["Flaky", "Nutty", "Sweet", "Crunchy"] },
+          { name: "Korean Garlic Croissant", price: "35", tags: ["Garlic", "Flaky", "Creamy"] },
+          { name: "Butter Croissant", price: "20", tags: ["Buttery", "Flaky", "The O.G"] },
+          { name: "Ham & Cheese Croissant", price: "32.5", tags: ["Cheesy", "Meaty", "Flaky"] },
+        ],
+      },
+      {
+        title: "Specialty",
+        items: [
+          { name: "Red Velvet Bliss", price: "40", tags: ["Flaky", "Sweet", "Cheesy"] },
+          { name: "Crookie", price: "35", tags: ["Caramelized", "Nutty"] },
+          { name: "Ferrero Forest", price: "40", tags: ["Sweet", "Bitter", "Chocolaty"] },
+          { name: "Dochi", price: "32", tags: ["Sweet", "Soft", "Chewy"] },
+          { name: "Kouign Amann", price: "20", tags: ["Buttery", "Flaky", "Sweet"] },
+          { name: "Yuzu Madeleine", price: "17.5", tags: ["Sweet Sour", "Soft", "Refreshing"] },
+          { name: "Cinnamon Monkey Bread", price: "25", tags: ["Sweet", "Spices", "Flaky"] },
+          { name: "Rusty Mochi Brownchiz", price: "50", tags: ["Stretchy", "Cheesy", "Fudgy"] },
+          { name: "Pain Au Chocolate", price: "25", tags: ["Buttery", "Flaky", "Chocolaty"] },
+          { name: "Original Canelé", price: "25", tags: ["Caramelized", "Soft", "O.G Taste"] },
         ],
       },
     ],
