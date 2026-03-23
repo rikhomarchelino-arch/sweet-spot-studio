@@ -1,25 +1,25 @@
-import { Lightbulb, Hammer, Sun } from "lucide-react";
+import { Sparkles, Search, Sun } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 import StaggerReveal from "@/components/StaggerReveal";
 
 const aboutItems = [
   {
-    icon: Lightbulb,
-    title: "Baked with Passion",
+    icon: Sparkles,
+    title: "Designed to Feel Personal",
     description:
-      "At The Pound Cake, we don't just bake—we innovate. Our passion for quality inspires us to create bold, flavorful treats that blend creativity with tradition, delivering an unexpected twist on classic favorites.",
+      "Every cake we create is designed with intention—crafted to match your moment, your style, and your story. Because no two celebrations should ever feel the same.",
   },
   {
-    icon: Hammer,
-    title: "Crafted with Care",
+    icon: Search,
+    title: "Crafted in Every Detail",
     description:
-      "From tangy tarts and rich pound cakes to buttery cookies and artisan rolls, every treat is crafted with the finest, freshest ingredients. We hand-make each item to bring out the natural richness and flavour.",
+      "From shape to finish, every detail is thoughtfully made to create a cake that not only tastes good—but looks unforgettable.",
   },
   {
     icon: Sun,
-    title: "Fresh Flavours, Every Day",
+    title: "Made Fresh, Made for You",
     description:
-      "We believe that freshness is key to delivering the best flavour. That's why everything at The Pound Cake is made fresh daily, ensuring the rich, vibrant taste in every single bite, all day, every day.",
+      "Each cake is made to order using fresh ingredients, ensuring every piece feels as special as the moment it’s made for.",
   },
 ];
 
