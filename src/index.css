@@ -88,6 +88,11 @@
   animation: marquee 20s linear infinite;
 }
 
+/* Hide scrollbar for carousel */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 /* Smooth scroll */
 html {
   scroll-behavior: smooth;
