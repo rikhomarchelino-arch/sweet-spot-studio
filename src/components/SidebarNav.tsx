@@ -39,7 +39,7 @@ const SidebarNav = ({ activeSection, onNavigate }: SidebarNavProps) => {
       <nav className="hidden md:flex fixed left-0 top-0 bottom-0 w-20 z-50 flex-col items-center justify-between py-6 bg-sidebar border-r border-sidebar-border">
         <div
           className="w-12 h-12 rounded-full overflow-hidden cursor-pointer"
-          onClick={() => onNavigate("home")}
+          onClick={() => handleNav("home")}
         >
           <img src={logo} alt="The Pound Cake" className="w-full h-full object-cover" />
         </div>
@@ -51,7 +51,7 @@ const SidebarNav = ({ activeSection, onNavigate }: SidebarNavProps) => {
             return (
               <button
                 key={item.id}
-                onClick={() => onNavigate(item.id)}
+                onClick={() => handleNav(item.id)}
                 className={`w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-300 ${
                   isActive
                     ? "bg-primary text-primary-foreground"
@@ -67,7 +67,7 @@ const SidebarNav = ({ activeSection, onNavigate }: SidebarNavProps) => {
 
         <div
           className="w-12 h-12 rounded-full overflow-hidden cursor-pointer"
-          onClick={() => onNavigate("home")}
+          onClick={() => handleNav("home")}
         >
           <img src={logo} alt="The Pound Cake" className="w-full h-full object-cover" />
         </div>
@@ -77,7 +77,7 @@ const SidebarNav = ({ activeSection, onNavigate }: SidebarNavProps) => {
       <nav className="md:hidden fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 py-3 bg-sidebar/95 backdrop-blur-md border-b border-sidebar-border">
         <div
           className="w-10 h-10 rounded-full overflow-hidden cursor-pointer"
-          onClick={() => onNavigate("home")}
+          onClick={() => handleNav("home")}
         >
           <img src={logo} alt="The Pound Cake" className="w-full h-full object-cover" />
         </div>
@@ -88,7 +88,7 @@ const SidebarNav = ({ activeSection, onNavigate }: SidebarNavProps) => {
             return (
               <button
                 key={item.id}
-                onClick={() => onNavigate(item.id)}
+                onClick={() => handleNav(item.id)}
                 className={`w-9 h-9 rounded-lg flex items-center justify-center transition-all duration-300 ${
                   isActive
                     ? "text-primary"
