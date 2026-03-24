@@ -1,30 +1,26 @@
-import { MapPin, MessageCircle, ArrowRight } from "lucide-react";
+import { MapPin, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import contactHero from "@/assets/contact-page-hero.jpg";
 import SidebarNav from "@/components/SidebarNav";
 import FooterMarquee from "@/components/FooterMarquee";
 import { useEffect } from "react";
 
-const GOOGLE_MAPS_URL =
-  "https://www.google.com/maps/place/The+Pound+Cake+%7C+Pastry+%26+Coffee,+Jl.+Letnan+Jenderal+S.+Parman+No.3,+Petompon,+Gajahmungkur,+Semarang+City,+Central+Java+50231/data=!4m2!3m1!1s0x2e708b252acba21f:0x8c7d0756df0a137!18m1!1e1?utm_source=mstt_1&entry=gps&coh=192189&g_ep=CAESBzI2LjEyLjUYACDXggMqlAEsOTQyNjc3MjcsOTQyOTIxOTUsOTQyOTk1MzIsMTAwNzk2NDk4LDEwMDc5Nzc2MSwxMDA3OTY1MzUsOTQyODQ0NzIsOTQyODA1NzYsOTQyMDczOTQsOTQyMDc1MDYsOTQyMDg1MDYsOTQyMTg2NTMsOTQyMjk4MzksOTQyNzUxNjgsOTQyNzk2MTksMTAwNzk2MTkzQgJJRA%3D%3D&skid=6a1061a6-8cea-4b19-932f-a9e2301c79b1&g_st=aw";
-
-const WHATSAPP_URL = "https://wa.me/6281234567890";
-const INSTAGRAM_URL = "https://www.instagram.com/thepoundcake.id";
+const GOOGLE_MAPS_URL = "https://maps.app.goo.gl/iVCUuKjMbWn2wQEZA?g_st=aw";
+const WHATSAPP_URL = "https://api.whatsapp.com/send?phone=6285218506543&text=Hi%2C%20can%20you%20help%20me%20with%20the%20reservation%20or%20an%20order%3F%20Thank%20You%20%F0%9F%A5%90%E2%9C%A8";
+const INSTAGRAM_URL = "https://www.instagram.com/thepoundcake.smg/";
 
 const InstagramIcon = ({ size = 20 }: { size?: number }) => (
-  <svg
-    width={size}
-    height={size}
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
     <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
     <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+  </svg>
+);
+
+const WhatsAppIcon = ({ size = 20 }: { size?: number }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21" />
+    <path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1" />
   </svg>
 );
 
@@ -33,19 +29,16 @@ const ctaButtons = [
     label: "Visit Our Instagram",
     url: INSTAGRAM_URL,
     icon: InstagramIcon,
-    isCustomIcon: true,
   },
   {
     label: "Find Us on Google Maps",
     url: GOOGLE_MAPS_URL,
     icon: MapPin,
-    isCustomIcon: false,
   },
   {
     label: "Chat via WhatsApp",
     url: WHATSAPP_URL,
-    icon: MessageCircle,
-    isCustomIcon: false,
+    icon: WhatsAppIcon,
   },
 ];
 
