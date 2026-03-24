@@ -1,4 +1,4 @@
-import { MapPin, MessageCircle, ArrowRight } from "lucide-react";
+import { MapPin, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import contactHero from "@/assets/contact-page-hero.jpg";
 import SidebarNav from "@/components/SidebarNav";
