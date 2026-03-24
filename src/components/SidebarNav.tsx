@@ -47,7 +47,7 @@ const SidebarNav = ({ activeSection, onNavigate }: SidebarNavProps) => {
         <div className="flex flex-col items-center gap-6">
           {navItems.map((item) => {
             const Icon = item.icon;
-            const isActive = activeSection === item.id;
+            const isActive = item.id === "contact" ? location.pathname === "/contact" : activeSection === item.id;
             return (
               <button
                 key={item.id}
@@ -84,7 +84,7 @@ const SidebarNav = ({ activeSection, onNavigate }: SidebarNavProps) => {
         <div className="flex items-center gap-4">
           {navItems.map((item) => {
             const Icon = item.icon;
-            const isActive = activeSection === item.id;
+            const isActive = item.id === "contact" ? location.pathname === "/contact" : activeSection === item.id;
             return (
               <button
                 key={item.id}
