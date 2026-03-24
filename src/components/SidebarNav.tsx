@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import { Home, UtensilsCrossed, Info, Phone } from "lucide-react";
 import logo from "@/assets/logo.jpg";
 
@@ -15,6 +16,23 @@ const navItems = [
 ];
 
 const SidebarNav = ({ activeSection, onNavigate }: SidebarNavProps) => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleNav = (id: string) => {
+    if (id === "contact") {
+      navigate("/contact");
+    } else if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    } else {
+      onNavigate(id);
+    }
+  };
+
   return (
     <>
       {/* Desktop sidebar */}
