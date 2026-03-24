@@ -127,7 +127,7 @@ const Contact = () => {
               transition={{ duration: 0.5, delay: 0.9 }}
               className="mt-10 text-muted-foreground/60 font-body text-sm"
             >
-              We're happy to assist you with any questions.
+              Contact Us For Reservation & PreOrder
             </motion.p>
           </div>
         </div>
