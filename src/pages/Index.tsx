@@ -5,7 +5,7 @@ import MenuSection from "@/components/MenuSection";
 import AboutSection from "@/components/AboutSection";
 import FAQSection from "@/components/FAQSection";
 import ReviewsSection from "@/components/ReviewsSection";
-import ContactSection from "@/components/ContactSection";
+
 import FooterMarquee from "@/components/FooterMarquee";
 
 const Index = () => {
@@ -49,7 +49,7 @@ const Index = () => {
         <AboutSection />
         <FAQSection />
         <ReviewsSection />
-        <ContactSection />
+        
         <FooterMarquee />
       </main>
     </div>
