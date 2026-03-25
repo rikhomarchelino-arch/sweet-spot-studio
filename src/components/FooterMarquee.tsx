@@ -1,31 +1,26 @@
-import logo from "@/assets/logo.jpg";
-import ScrollReveal from "@/components/ScrollReveal";
-
 const FooterMarquee = () => {
   return (
-    <ScrollReveal>
-      <footer className="py-8 border-t border-border overflow-hidden">
-        <div className="relative">
-          <div className="flex animate-marquee whitespace-nowrap">
-            {Array.from({ length: 12 }).map((_, i) => (
-              <div key={i} className="flex items-center gap-4 mx-4">
-                <span className="font-display text-2xl font-bold text-primary">
-                  THE POUND CAKE
-                </span>
-                <img
-                  src={logo}
-                  alt=""
-                  className="w-8 h-8 rounded-full object-cover"
-                />
-              </div>
-            ))}
+    <footer className="py-12 border-t border-border">
+      <div className="max-w-md mx-auto text-center space-y-6 px-4">
+        <h3 className="font-display text-2xl font-bold text-primary">
+          The Pound Cake
+        </h3>
+
+        <div className="space-y-2">
+          <p className="text-sm font-body font-medium text-foreground/80">
+            Opening Hours
+          </p>
+          <div className="text-sm font-body text-muted-foreground space-y-1">
+            <p>Monday – Thursday · 07.00 – 22.00</p>
+            <p>Friday – Sunday · 07.00 – 23.00</p>
           </div>
         </div>
-        <p className="text-center text-muted-foreground text-sm font-body mt-6">
+
+        <p className="text-muted-foreground/50 text-xs font-body pt-2">
           © 2026 Rikho Marchelino. All rights reserved.
         </p>
-      </footer>
-    </ScrollReveal>
+      </div>
+    </footer>
   );
 };
 
