@@ -32,7 +32,7 @@ const MenuSection = () => {
                 <h3 className="font-display text-2xl md:text-3xl font-semibold text-foreground">
                   {cat.name}
                 </h3>
-                <p className="mt-1 text-sm text-foreground/60 font-body max-w-xs opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <p className="mt-1 text-sm text-foreground/60 font-body max-w-xs opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500">
                   {cat.description}
                 </p>
               </div>
