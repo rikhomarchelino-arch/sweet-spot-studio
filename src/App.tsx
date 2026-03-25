@@ -7,6 +7,7 @@ import Index from "./pages/Index.tsx";
 import MenuCategory from "./pages/MenuCategory.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import Contact from "./pages/Contact.tsx";
+import GlobalLayout from "./components/GlobalLayout.tsx";
 
 const queryClient = new QueryClient();
 
@@ -17,9 +18,11 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/menu/:slug" element={<MenuCategory />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route element={<GlobalLayout />}>
+            <Route path="/" element={<Index />} />
+            <Route path="/menu/:slug" element={<MenuCategory />} />
+            <Route path="/contact" element={<Contact />} />
+          </Route>
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

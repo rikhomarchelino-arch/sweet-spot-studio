@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Home, UtensilsCrossed, Info, Phone } from "lucide-react";
 import logo from "@/assets/logo.jpg";
+import brandImage from "@/assets/category-cakes.jpg";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 interface SidebarNavProps {
   activeSection: string;
