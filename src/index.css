@@ -6,51 +6,51 @@
 
 @layer base {
   :root {
-    --background: 40 20% 96%;
-    --foreground: 30 10% 12%;
+    --background: 35 25% 94%;
+    --foreground: 30 15% 18%;
 
-    --card: 40 15% 100%;
-    --card-foreground: 30 10% 12%;
+    --card: 36 22% 96%;
+    --card-foreground: 30 15% 18%;
 
-    --popover: 40 15% 100%;
-    --popover-foreground: 30 10% 12%;
+    --popover: 36 22% 96%;
+    --popover-foreground: 30 15% 18%;
 
-    --primary: 40 90% 45%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 40 70% 42%;
+    --primary-foreground: 40 30% 97%;
 
-    --secondary: 40 10% 92%;
-    --secondary-foreground: 30 10% 20%;
+    --secondary: 35 18% 90%;
+    --secondary-foreground: 30 12% 22%;
 
-    --muted: 40 8% 90%;
-    --muted-foreground: 30 8% 45%;
+    --muted: 35 14% 88%;
+    --muted-foreground: 30 8% 50%;
 
-    --accent: 40 90% 45%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 40 70% 42%;
+    --accent-foreground: 40 30% 97%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive: 0 65% 55%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 40 10% 88%;
-    --input: 40 10% 88%;
-    --ring: 40 90% 45%;
+    --border: 35 15% 86%;
+    --input: 35 15% 86%;
+    --ring: 40 70% 42%;
 
     --radius: 0.75rem;
 
-    --sidebar-background: 40 15% 98%;
-    --sidebar-foreground: 30 10% 12%;
-    --sidebar-primary: 40 90% 45%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 40 10% 94%;
-    --sidebar-accent-foreground: 30 10% 12%;
-    --sidebar-border: 40 10% 90%;
-    --sidebar-ring: 40 90% 45%;
+    --sidebar-background: 36 20% 95%;
+    --sidebar-foreground: 30 15% 18%;
+    --sidebar-primary: 40 70% 42%;
+    --sidebar-primary-foreground: 40 30% 97%;
+    --sidebar-accent: 35 16% 91%;
+    --sidebar-accent-foreground: 30 15% 18%;
+    --sidebar-border: 35 14% 88%;
+    --sidebar-ring: 40 70% 42%;
 
     --font-display: 'Playfair Display', serif;
     --font-body: 'DM Sans', sans-serif;
 
-    --gradient-golden: linear-gradient(135deg, hsl(40 90% 45%), hsl(35 85% 38%));
-    --shadow-card: 0 4px 24px -4px hsl(0 0% 0% / 0.08);
-    --shadow-glow: 0 0 20px -4px hsl(40 90% 45% / 0.1);
+    --gradient-golden: linear-gradient(135deg, hsl(40 70% 42%), hsl(35 65% 36%));
+    --shadow-card: 0 4px 20px -4px hsl(30 20% 30% / 0.06);
+    --shadow-glow: 0 0 16px -4px hsl(40 70% 42% / 0.08);
   }
 
   .dark {
