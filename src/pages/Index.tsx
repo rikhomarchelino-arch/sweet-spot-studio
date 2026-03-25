@@ -1,15 +1,14 @@
-import { useState, useEffect } from "react";
-import SidebarNav from "@/components/SidebarNav";
+import { useEffect } from "react";
+import { useOutletContext } from "react-router-dom";
 import HeroSection from "@/components/HeroSection";
 import MenuSection from "@/components/MenuSection";
 import AboutSection from "@/components/AboutSection";
 import FAQSection from "@/components/FAQSection";
 import ReviewsSection from "@/components/ReviewsSection";
-
 import FooterMarquee from "@/components/FooterMarquee";
 
 const Index = () => {
-  const [activeSection, setActiveSection] = useState("home");
+  const { setActiveSection } = useOutletContext<{ setActiveSection: (s: string) => void }>();
 
   useEffect(() => {
     const sections = ["home", "menu", "about", "contact"];
@@ -30,29 +29,17 @@ const Index = () => {
     });
 
     return () => observer.disconnect();
-  }, []);
-
-  const handleNavigate = (section: string) => {
-    const el = document.getElementById(section);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+  }, [setActiveSection]);
 
   return (
-    <div className="min-h-screen bg-background">
-      <SidebarNav activeSection={activeSection} onNavigate={handleNavigate} />
-
-      <main className="md:ml-20">
-        <HeroSection />
-        <MenuSection />
-        <AboutSection />
-        <FAQSection />
-        <ReviewsSection />
-        
-        <FooterMarquee />
-      </main>
-    </div>
+    <>
+      <HeroSection />
+      <MenuSection />
+      <AboutSection />
+      <FAQSection />
+      <ReviewsSection />
+      <FooterMarquee />
+    </>
   );
 };
 

@@ -1,7 +1,6 @@
 import { MapPin, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import contactHero from "@/assets/contact-page-hero.jpg";
-import SidebarNav from "@/components/SidebarNav";
 import FooterMarquee from "@/components/FooterMarquee";
 import { useEffect } from "react";
 
@@ -48,93 +47,85 @@ const Contact = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background">
-      <SidebarNav activeSection="contact" onNavigate={() => {}} />
+    <>
+      {/* Hero Image */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        className="relative w-full h-56 md:h-72 lg:h-80 overflow-hidden"
+      >
+        <img
+          src={contactHero}
+          alt="The Pound Cake atmosphere"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/50 to-background" />
+      </motion.div>
 
-      <main className="md:ml-20">
-        {/* Hero Image */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          className="relative w-full h-56 md:h-72 lg:h-80 overflow-hidden"
-        >
-          <img
-            src={contactHero}
-            alt="The Pound Cake atmosphere"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/50 to-background" />
-        </motion.div>
+      {/* Content */}
+      <div className="px-6 md:px-12 -mt-16 relative z-10 pb-12">
+        <div className="max-w-xl mx-auto text-center">
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground"
+          >
+            Get in Touch
+          </motion.h1>
 
-        {/* Content */}
-        <div className="px-6 md:px-12 -mt-16 relative z-10 pb-12">
-          <div className="max-w-xl mx-auto text-center">
-            {/* Title */}
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.2 }}
-              className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground"
-            >
-              Get in Touch
-            </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="mt-4 text-muted-foreground font-body text-base md:text-lg"
+          >
+            Visit us or reach out through your preferred platform.
+          </motion.p>
 
-            {/* Subtitle */}
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="mt-4 text-muted-foreground font-body text-base md:text-lg"
-            >
-              Visit us or reach out through your preferred platform.
-            </motion.p>
-
-            {/* CTA Buttons */}
-            <div className="mt-10 space-y-4">
-              {ctaButtons.map((btn, i) => {
-                const Icon = btn.icon;
-                return (
-                  <motion.a
-                    key={btn.label}
-                    href={btn.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.5 + i * 0.1 }}
-                    className="group flex items-center justify-center gap-3 w-full py-4 md:py-4.5 rounded-full bg-card border border-border text-foreground font-body font-semibold text-base md:text-lg hover:border-primary/50 hover:scale-[1.03] transition-all duration-300"
-                    style={{ boxShadow: "var(--shadow-card)" }}
-                  >
-                    <Icon
-                      size={20}
-                      className="text-primary transition-transform duration-300 group-hover:translate-x-0"
-                    />
-                    <span>{btn.label}</span>
-                    <ArrowRight
-                      size={16}
-                      className="text-muted-foreground opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300"
-                    />
-                  </motion.a>
-                );
-              })}
-            </div>
-
-            {/* Supporting text */}
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.9 }}
-              className="mt-10 text-muted-foreground/60 font-body text-sm"
-            >
-              Contact Us For Reservation & PreOrder
-            </motion.p>
+          <div className="mt-10 space-y-4">
+            {ctaButtons.map((btn, i) => {
+              const Icon = btn.icon;
+              return (
+                <motion.a
+                  key={btn.label}
+                  href={btn.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.5 + i * 0.1 }}
+                  className="group flex items-center justify-center gap-3 w-full py-4 md:py-4.5 rounded-full bg-card border border-border text-foreground font-body font-semibold text-base md:text-lg hover:border-primary/50 hover:scale-[1.03] transition-all duration-300"
+                  style={{ boxShadow: "var(--shadow-card)" }}
+                >
+                  <Icon
+                    size={20}
+                    className="text-primary transition-transform duration-300 group-hover:translate-x-0"
+                  />
+                  <span>{btn.label}</span>
+                  <ArrowRight
+                    size={16}
+                    className="text-muted-foreground opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300"
+                  />
+                </motion.a>
+              );
+            })}
           </div>
-        </div>
 
-        <FooterMarquee />
-      </main>
-    </div>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.9 }}
+            className="mt-10 text-muted-foreground/60 font-body text-sm"
+          >
+            Contact Us For Reservation & PreOrder
+          </motion.p>
+        </div>
+      </div>
+
+      <FooterMarquee />
+    </>
   );
 };
 
