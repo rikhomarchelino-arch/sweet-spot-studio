@@ -102,6 +102,12 @@
     @apply border-border;
   }
 
+  * {
+    transition-property: background-color, border-color, color, box-shadow;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+  }
+
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-body);
