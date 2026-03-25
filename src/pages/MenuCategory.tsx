@@ -123,7 +123,7 @@ const MenuCategory = () => {
                   <h3 className="font-display text-xl md:text-2xl font-semibold text-foreground">
                     {cat.name}
                   </h3>
-                  <p className="mt-1 text-xs text-foreground/60 font-body max-w-xs opacity-0 group-hover:opacity-100 transition-opacity duration-500 line-clamp-2">
+                  <p className="mt-1 text-xs text-foreground/60 font-body max-w-xs opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500 line-clamp-2">
                     {cat.description}
                   </p>
                 </div>
