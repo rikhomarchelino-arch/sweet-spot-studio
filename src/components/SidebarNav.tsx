@@ -35,6 +35,8 @@ const SidebarNav = ({ activeSection, onNavigate }: SidebarNavProps) => {
     }
   };
 
+  const isMobile = useIsMobile();
+
   return (
     <>
       {/* Desktop sidebar */}
@@ -43,7 +45,7 @@ const SidebarNav = ({ activeSection, onNavigate }: SidebarNavProps) => {
           className="w-12 h-12 rounded-full overflow-hidden cursor-pointer"
           onClick={() => handleNav("home")}
         >
-          <img src={logo} alt="The Pound Cake" className="w-full h-full object-cover" />
+          <img src={brandImage} alt="The Pound Cake" className="w-full h-full object-cover" />
         </div>
 
         <div className="flex flex-col items-center gap-6">
@@ -71,7 +73,7 @@ const SidebarNav = ({ activeSection, onNavigate }: SidebarNavProps) => {
           className="w-12 h-12 rounded-full overflow-hidden cursor-pointer"
           onClick={() => handleNav("home")}
         >
-          <img src={logo} alt="The Pound Cake" className="w-full h-full object-cover" />
+          <img src={brandImage} alt="The Pound Cake" className="w-full h-full object-cover" />
         </div>
       </nav>
 
