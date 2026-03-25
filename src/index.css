@@ -6,6 +6,54 @@
 
 @layer base {
   :root {
+    --background: 40 20% 96%;
+    --foreground: 30 10% 12%;
+
+    --card: 40 15% 100%;
+    --card-foreground: 30 10% 12%;
+
+    --popover: 40 15% 100%;
+    --popover-foreground: 30 10% 12%;
+
+    --primary: 40 90% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 40 10% 92%;
+    --secondary-foreground: 30 10% 20%;
+
+    --muted: 40 8% 90%;
+    --muted-foreground: 30 8% 45%;
+
+    --accent: 40 90% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 40 10% 88%;
+    --input: 40 10% 88%;
+    --ring: 40 90% 45%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 40 15% 98%;
+    --sidebar-foreground: 30 10% 12%;
+    --sidebar-primary: 40 90% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 40 10% 94%;
+    --sidebar-accent-foreground: 30 10% 12%;
+    --sidebar-border: 40 10% 90%;
+    --sidebar-ring: 40 90% 45%;
+
+    --font-display: 'Playfair Display', serif;
+    --font-body: 'DM Sans', sans-serif;
+
+    --gradient-golden: linear-gradient(135deg, hsl(40 90% 45%), hsl(35 85% 38%));
+    --shadow-card: 0 4px 24px -4px hsl(0 0% 0% / 0.08);
+    --shadow-glow: 0 0 20px -4px hsl(40 90% 45% / 0.1);
+  }
+
+  .dark {
     --background: 30 10% 8%;
     --foreground: 40 20% 92%;
 
@@ -34,8 +82,6 @@
     --input: 30 8% 20%;
     --ring: 40 90% 50%;
 
-    --radius: 0.75rem;
-
     --sidebar-background: 30 10% 6%;
     --sidebar-foreground: 40 20% 92%;
     --sidebar-primary: 40 90% 50%;
@@ -44,9 +90,6 @@
     --sidebar-accent-foreground: 40 20% 92%;
     --sidebar-border: 30 8% 16%;
     --sidebar-ring: 40 90% 50%;
-
-    --font-display: 'Playfair Display', serif;
-    --font-body: 'DM Sans', sans-serif;
 
     --gradient-golden: linear-gradient(135deg, hsl(40 90% 50%), hsl(35 85% 42%));
     --shadow-card: 0 4px 24px -4px hsl(0 0% 0% / 0.4);
@@ -57,6 +100,12 @@
 @layer base {
   * {
     @apply border-border;
+  }
+
+  * {
+    transition-property: background-color, border-color, color, box-shadow;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
   }
 
   body {

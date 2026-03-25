@@ -1,13 +1,13 @@
-import { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { Home, UtensilsCrossed, Info, Phone } from "lucide-react";
+import { Home, UtensilsCrossed, Info, Phone, Sun, Moon } from "lucide-react";
 import logo from "@/assets/logo.jpg";
 import brandImage from "@/assets/category-cakes.jpg";
-import { useIsMobile } from "@/hooks/use-mobile";
 
 interface SidebarNavProps {
   activeSection: string;
   onNavigate: (section: string) => void;
+  theme: "light" | "dark";
+  toggleTheme: () => void;
 }
 
 const navItems = [
@@ -17,7 +17,7 @@ const navItems = [
   { id: "contact", icon: Phone, label: "Contact" },
 ];
 
-const SidebarNav = ({ activeSection, onNavigate }: SidebarNavProps) => {
+const SidebarNav = ({ activeSection, onNavigate, theme, toggleTheme }: SidebarNavProps) => {
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -35,12 +35,10 @@ const SidebarNav = ({ activeSection, onNavigate }: SidebarNavProps) => {
     }
   };
 
-  const isMobile = useIsMobile();
-
   return (
     <>
       {/* Desktop sidebar */}
-      <nav className="hidden md:flex fixed left-0 top-0 bottom-0 w-20 z-50 flex-col items-center justify-between py-6 bg-sidebar border-r border-sidebar-border">
+      <nav className="hidden md:flex fixed left-0 top-0 bottom-0 w-20 z-50 flex-col items-center justify-between py-6 bg-sidebar border-r border-sidebar-border transition-colors duration-300">
         <div
           className="w-12 h-12 rounded-full overflow-hidden cursor-pointer"
           onClick={() => handleNav("home")}
@@ -67,6 +65,15 @@ const SidebarNav = ({ activeSection, onNavigate }: SidebarNavProps) => {
               </button>
             );
           })}
+
+          {/* Theme toggle */}
+          <button
+            onClick={toggleTheme}
+            className="w-10 h-10 rounded-lg flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-secondary transition-all duration-300"
+            aria-label="Toggle theme"
+          >
+            {theme === "dark" ? <Sun size={20} strokeWidth={1.5} /> : <Moon size={20} strokeWidth={1.5} />}
+          </button>
         </div>
 
         <div
@@ -78,7 +85,7 @@ const SidebarNav = ({ activeSection, onNavigate }: SidebarNavProps) => {
       </nav>
 
       {/* Mobile top bar */}
-      <nav className="md:hidden fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 py-3 bg-sidebar/95 backdrop-blur-md border-b border-sidebar-border">
+      <nav className="md:hidden fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 py-3 bg-sidebar/95 backdrop-blur-md border-b border-sidebar-border transition-colors duration-300">
         <div
           className="w-10 h-10 rounded-full overflow-hidden cursor-pointer"
           onClick={() => handleNav("home")}
@@ -104,6 +111,15 @@ const SidebarNav = ({ activeSection, onNavigate }: SidebarNavProps) => {
               </button>
             );
           })}
+
+          {/* Mobile theme toggle */}
+          <button
+            onClick={toggleTheme}
+            className="w-9 h-9 rounded-lg flex items-center justify-center text-muted-foreground hover:text-foreground transition-all duration-300"
+            aria-label="Toggle theme"
+          >
+            {theme === "dark" ? <Sun size={18} strokeWidth={1.5} /> : <Moon size={18} strokeWidth={1.5} />}
+          </button>
         </div>
       </nav>
     </>
