@@ -8,7 +8,8 @@ import ReviewsSection from "@/components/ReviewsSection";
 import FooterMarquee from "@/components/FooterMarquee";
 
 const Index = () => {
-  const { setActiveSection } = useOutletContext<{ setActiveSection: (s: string) => void }>();
+  const outletContext = useOutletContext<{ setActiveSection: (s: string) => void } | null>();
+  const setActiveSection = outletContext?.setActiveSection ?? (() => {});
 
   useEffect(() => {
     const sections = ["home", "menu", "about", "contact"];
