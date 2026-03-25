@@ -1,7 +1,8 @@
 import { useNavigate, useLocation } from "react-router-dom";
-import { Home, UtensilsCrossed, Info, Phone, Sun, Moon } from "lucide-react";
+import { Home, UtensilsCrossed, Info, Phone } from "lucide-react";
 import logo from "@/assets/logo.jpg";
 import brandImage from "@/assets/category-cakes.jpg";
+import ThemeToggle from "./ThemeToggle";
 
 interface SidebarNavProps {
   activeSection: string;
@@ -66,14 +67,7 @@ const SidebarNav = ({ activeSection, onNavigate, theme, toggleTheme }: SidebarNa
             );
           })}
 
-          {/* Theme toggle */}
-          <button
-            onClick={toggleTheme}
-            className="w-10 h-10 rounded-lg flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-secondary transition-all duration-300"
-            aria-label="Toggle theme"
-          >
-            {theme === "dark" ? <Sun size={20} strokeWidth={1.5} /> : <Moon size={20} strokeWidth={1.5} />}
-          </button>
+          <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
         </div>
 
         <div
@@ -92,7 +86,7 @@ const SidebarNav = ({ activeSection, onNavigate, theme, toggleTheme }: SidebarNa
         >
           <img src={logo} alt="The Pound Cake" className="w-full h-full object-cover" />
         </div>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3">
           {navItems.map((item) => {
             const Icon = item.icon;
             const isActive = item.id === "contact" ? location.pathname === "/contact" : activeSection === item.id;
@@ -112,14 +106,7 @@ const SidebarNav = ({ activeSection, onNavigate, theme, toggleTheme }: SidebarNa
             );
           })}
 
-          {/* Mobile theme toggle */}
-          <button
-            onClick={toggleTheme}
-            className="w-9 h-9 rounded-lg flex items-center justify-center text-muted-foreground hover:text-foreground transition-all duration-300"
-            aria-label="Toggle theme"
-          >
-            {theme === "dark" ? <Sun size={18} strokeWidth={1.5} /> : <Moon size={18} strokeWidth={1.5} />}
-          </button>
+          <ThemeToggle theme={theme} toggleTheme={toggleTheme} compact />
         </div>
       </nav>
     </>
