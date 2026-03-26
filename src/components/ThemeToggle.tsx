@@ -29,7 +29,7 @@ const ThemeToggle = ({ theme, toggleTheme, compact = false }: ThemeToggleProps) 
   return (
     <button
       onClick={toggleTheme}
-      className="relative items-center gap-1 w-10 h-[4.5rem] rounded-full bg-accent/20 border border-accent/30 cursor-pointer hover:scale-105 transition-transform duration-300 p-1 flex flex-row"
+      className="relative w-10 h-[4.5rem] rounded-full bg-accent/20 border border-accent/30 cursor-pointer hover:scale-105 transition-transform duration-300 p-1 flex-row flex items-center justify-center gap-[8px]"
       aria-label="Toggle theme">
       
       <Sun size={14} className={`relative z-10 transition-opacity duration-300 mt-0.5 text-accent-foreground ${isDark ? "opacity-40" : "opacity-100"}`} />
