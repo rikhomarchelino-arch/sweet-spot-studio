@@ -53,12 +53,13 @@ const Contact = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
-        className="relative w-full h-56 md:h-72 lg:h-80 overflow-hidden"
+        className="relative w-full h-72 md:h-96 lg:h-[28rem] overflow-hidden"
       >
         <img
           src={contactHero}
           alt="The Pound Cake atmosphere"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-center"
+          loading="lazy"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/50 to-background" />
       </motion.div>
@@ -101,7 +102,7 @@ const Contact = () => {
                 >
                   <Icon
                     size={20}
-                    className="text-primary transition-transform duration-300 group-hover:translate-x-0"
+                    className="text-secondary-foreground transition-transform duration-300 group-hover:translate-x-0"
                   />
                   <span>{btn.label}</span>
                   <ArrowRight
