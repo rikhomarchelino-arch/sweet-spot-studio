@@ -57,8 +57,8 @@ const SidebarNav = ({ activeSection, onNavigate, theme, toggleTheme }: SidebarNa
                 onClick={() => handleNav(item.id)}
                 className={`w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-300 ${
                   isActive
-                    ? "bg-primary text-primary-foreground"
-                    : "text-muted-foreground hover:text-foreground hover:bg-secondary"
+                    ? "bg-accent/20 text-accent"
+                    : "text-accent/50 hover:text-accent hover:bg-accent/10"
                 }`}
                 aria-label={item.label}
               >
@@ -96,8 +96,8 @@ const SidebarNav = ({ activeSection, onNavigate, theme, toggleTheme }: SidebarNa
                 onClick={() => handleNav(item.id)}
                 className={`w-9 h-9 rounded-lg flex items-center justify-center transition-all duration-300 ${
                   isActive
-                    ? "text-primary"
-                    : "text-muted-foreground hover:text-foreground"
+                    ? "text-accent"
+                    : "text-accent/50 hover:text-accent"
                 }`}
                 aria-label={item.label}
               >
