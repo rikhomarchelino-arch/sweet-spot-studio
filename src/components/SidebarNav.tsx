@@ -1,7 +1,7 @@
 import { useNavigate, useLocation } from "react-router-dom";
 import { Home, UtensilsCrossed, Info, Phone } from "lucide-react";
-import logo from "@/assets/logo.jpg";
-import brandImage from "@/assets/category-cakes.jpg";
+import cakeIcon from "@/assets/CakeIcon.png";
+import croissantIcon from "@/assets/CroissantIcon.png";
 import ThemeToggle from "./ThemeToggle";
 
 interface SidebarNavProps {
@@ -44,7 +44,7 @@ const SidebarNav = ({ activeSection, onNavigate, theme, toggleTheme }: SidebarNa
           className="w-12 h-12 rounded-full overflow-hidden cursor-pointer"
           onClick={() => handleNav("home")}
         >
-          <img src={brandImage} alt="The Pound Cake" className="w-full h-full object-cover" />
+          <img src={cakeIcon} alt="The Pound Cake" className="w-full h-full object-contain p-1" />
         </div>
 
         <div className="flex flex-col items-center gap-6">
@@ -74,7 +74,7 @@ const SidebarNav = ({ activeSection, onNavigate, theme, toggleTheme }: SidebarNa
           className="w-12 h-12 rounded-full overflow-hidden cursor-pointer"
           onClick={() => handleNav("home")}
         >
-          <img src={brandImage} alt="The Pound Cake" className="w-full h-full object-cover" />
+          <img src={croissantIcon} alt="The Pound Cake" className="w-full h-full object-contain p-1" />
         </div>
       </nav>
 
@@ -84,7 +84,7 @@ const SidebarNav = ({ activeSection, onNavigate, theme, toggleTheme }: SidebarNa
           className="w-10 h-10 rounded-full overflow-hidden cursor-pointer"
           onClick={() => handleNav("home")}
         >
-          <img src={logo} alt="The Pound Cake" className="w-full h-full object-cover" />
+          <img src={cakeIcon} alt="The Pound Cake" className="w-full h-full object-contain p-1" />
         </div>
         <div className="flex items-center gap-3">
           {navItems.map((item) => {
