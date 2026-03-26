@@ -44,8 +44,8 @@ const ContactSection = () => {
 
         {/* Contact Details */}
         <ScrollReveal delay={0.1}>
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/40 text-primary text-sm font-body mb-6">
-            <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-accent/40 text-accent text-sm font-body mb-6">
+            <span className="w-1.5 h-1.5 rounded-full bg-accent" />
             Contact Details
           </span>
         </ScrollReveal>
@@ -60,11 +60,11 @@ const ContactSection = () => {
                 style={{ boxShadow: "var(--shadow-card)" }}
               >
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <Icon size={20} className="text-primary" />
+                  <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
+                    <Icon size={20} className="text-accent" />
                   </div>
                   <div>
-                    <h4 className="font-display text-lg font-semibold text-primary">
+                    <h4 className="font-display text-lg font-semibold text-accent">
                       {detail.title}
                     </h4>
                     <p className="mt-1 text-foreground/70 font-body text-sm">
@@ -79,8 +79,8 @@ const ContactSection = () => {
 
         {/* Contact Form */}
         <ScrollReveal delay={0.05}>
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/40 text-primary text-sm font-body mb-6">
-            <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-accent/40 text-accent text-sm font-body mb-6">
+            <span className="w-1.5 h-1.5 rounded-full bg-accent" />
             Contact Form
           </span>
         </ScrollReveal>
@@ -103,7 +103,7 @@ const ContactSection = () => {
                   onChange={(e) =>
                     setFormData((prev) => ({ ...prev, [field.key]: e.target.value }))
                   }
-                  className="w-full px-4 py-3 rounded-lg bg-card border border-border text-foreground font-body placeholder:text-muted-foreground focus:outline-none focus:border-primary/50 transition-colors"
+                  className="w-full px-4 py-3 rounded-lg bg-card border border-border text-foreground font-body placeholder:text-muted-foreground focus:outline-none focus:border-accent/50 transition-colors"
                 />
               </div>
             ))}
@@ -116,7 +116,7 @@ const ContactSection = () => {
                 onChange={(e) =>
                   setFormData((prev) => ({ ...prev, message: e.target.value }))
                 }
-                className="w-full px-4 py-3 rounded-lg bg-card border border-border text-foreground font-body placeholder:text-muted-foreground focus:outline-none focus:border-primary/50 transition-colors resize-y"
+                className="w-full px-4 py-3 rounded-lg bg-card border border-border text-foreground font-body placeholder:text-muted-foreground focus:outline-none focus:border-accent/50 transition-colors resize-y"
               />
             </div>
             <button

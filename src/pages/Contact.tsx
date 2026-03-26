@@ -97,12 +97,12 @@ const Contact = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.5 + i * 0.1 }}
-                  className="group flex items-center justify-center gap-3 w-full py-4 md:py-4.5 rounded-full bg-card border border-border text-foreground font-body font-semibold text-base md:text-lg hover:border-primary/50 hover:scale-[1.03] transition-all duration-300"
+                  className="group flex items-center justify-center gap-3 w-full py-4 md:py-4.5 rounded-full bg-card border border-border text-foreground font-body font-semibold text-base md:text-lg hover:border-accent/50 hover:scale-[1.03] transition-all duration-300"
                   style={{ boxShadow: "var(--shadow-card)" }}
                 >
                   <Icon
                     size={20}
-                    className="text-secondary-foreground transition-transform duration-300 group-hover:translate-x-0"
+                    className="text-accent transition-transform duration-300 group-hover:translate-x-0"
                   />
                   <span>{btn.label}</span>
                   <ArrowRight
