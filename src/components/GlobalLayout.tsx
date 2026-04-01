@@ -6,7 +6,7 @@ import { useTheme } from "@/hooks/useTheme";
 const GlobalLayout = () => {
   const [activeSection, setActiveSection] = useState("home");
   const location = useLocation();
-  const { theme, toggleTheme } = useTheme();
+  useTheme();
 
   useEffect(() => {
     if (location.pathname === "/contact") {
@@ -26,8 +26,6 @@ const GlobalLayout = () => {
       <SidebarNav
         activeSection={activeSection}
         onNavigate={handleNavigate}
-        theme={theme}
-        toggleTheme={toggleTheme}
       />
       <main className="md:ml-20 transition-colors duration-300">
         <Outlet context={{ setActiveSection }} />

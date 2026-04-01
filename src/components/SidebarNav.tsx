@@ -2,13 +2,10 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { Home, UtensilsCrossed, Info, Phone } from "lucide-react";
 import cakeIcon from "@/assets/CakeIcon.png";
 import croissantIcon from "@/assets/CroissantIcon.png";
-import ThemeToggle from "./ThemeToggle";
 
 interface SidebarNavProps {
   activeSection: string;
   onNavigate: (section: string) => void;
-  theme: "light" | "dark";
-  toggleTheme: () => void;
 }
 
 const navItems = [
@@ -18,7 +15,7 @@ const navItems = [
   { id: "contact", icon: Phone, label: "Contact" },
 ];
 
-const SidebarNav = ({ activeSection, onNavigate, theme, toggleTheme }: SidebarNavProps) => {
+const SidebarNav = ({ activeSection, onNavigate }: SidebarNavProps) => {
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -66,8 +63,6 @@ const SidebarNav = ({ activeSection, onNavigate, theme, toggleTheme }: SidebarNa
               </button>
             );
           })}
-
-          <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
         </div>
 
         <div
@@ -105,8 +100,6 @@ const SidebarNav = ({ activeSection, onNavigate, theme, toggleTheme }: SidebarNa
               </button>
             );
           })}
-
-          <ThemeToggle theme={theme} toggleTheme={toggleTheme} compact />
         </div>
       </nav>
     </>
