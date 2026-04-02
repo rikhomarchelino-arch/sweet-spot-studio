@@ -1,6 +1,8 @@
+import { useState } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import MenuItemRow from "@/components/MenuItemRow";
 import type { MenuSubCategory } from "@/data/menuData";
+import { getItemImage } from "@/data/menuImages";
 
 interface MenuSubSectionProps {
   subCategory: MenuSubCategory;
@@ -8,6 +10,12 @@ interface MenuSubSectionProps {
 
 const MenuSubSection = ({ subCategory }: MenuSubSectionProps) => {
   const { ref, isRevealed } = useScrollReveal({ threshold: 0.05 });
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+  const image = getItemImage(subCategory.title);
+
+  const handleToggleExpand = (index: number) => {
+    setExpandedIndex((prev) => (prev === index ? null : index));
+  };
 
   return (
     <div ref={ref} className="mb-10 last:mb-0">
@@ -21,9 +29,17 @@ const MenuSubSection = ({ subCategory }: MenuSubSectionProps) => {
           </p>
         )}
       </div>
-      <div>
+      <div className="flex flex-col">
         {subCategory.items.map((item, i) => (
-          <MenuItemRow key={item.name} item={item} index={i} isRevealed={isRevealed} />
+          <MenuItemRow
+            key={item.name}
+            item={item}
+            index={i}
+            isRevealed={isRevealed}
+            image={image}
+            isExpanded={expandedIndex === i}
+            onToggleExpand={() => handleToggleExpand(i)}
+          />
         ))}
       </div>
     </div>
