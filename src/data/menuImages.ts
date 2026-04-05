@@ -1,57 +1,41 @@
-// Sub-category level image mapping for menu items
-import poundCake from "@/assets/menu/pound-cake.jpg";
-import cheesecake from "@/assets/menu/cheesecake.jpg";
-import wholeCake from "@/assets/menu/whole-cake.jpg";
-import croissant from "@/assets/menu/croissant.jpg";
-import pastrySpecialty from "@/assets/menu/pastry-specialty.jpg";
-import coffee from "@/assets/menu/coffee.jpg";
-import matcha from "@/assets/menu/matcha.jpg";
-import mocktail from "@/assets/menu/mocktail.jpg";
-import tea from "@/assets/menu/tea.jpg";
-import blended from "@/assets/menu/blended.jpg";
-import coldbrew from "@/assets/menu/coldbrew.jpg";
-import hotChocolate from "@/assets/menu/hot-chocolate.jpg";
-import breakfast from "@/assets/menu/breakfast.jpg";
-import brunch from "@/assets/menu/brunch.jpg";
-import sandwich from "@/assets/menu/sandwich.jpg";
-import pasta from "@/assets/menu/pasta.jpg";
-import chicken from "@/assets/menu/chicken.jpg";
-import riceBowl from "@/assets/menu/rice-bowl.jpg";
-import frenchToast from "@/assets/menu/french-toast.jpg";
-import fries from "@/assets/menu/fries.jpg";
+// Per-item image mapping for unique hover images
+import earlGreyPoundCake from "@/assets/menu/items/earl-grey-pound-cake.jpg";
+import cookiesCreamPoundCake from "@/assets/menu/items/cookies-cream-pound-cake.jpg";
+import basqueCheesecake from "@/assets/menu/items/basque-cheesecake.jpg";
+import tiramisuCheesecake from "@/assets/menu/items/tiramisu-cheesecake.jpg";
+import almondCroissant from "@/assets/menu/items/almond-croissant.jpg";
+import tripleCheeseCroissant from "@/assets/menu/items/triple-cheese-croissant.jpg";
+import redVelvetBliss from "@/assets/menu/items/red-velvet-bliss.jpg";
+import crookie from "@/assets/menu/items/crookie.jpg";
+import flatWhite from "@/assets/menu/items/flat-white.jpg";
+import cafeLatte from "@/assets/menu/items/cafe-latte.jpg";
+import dirtyMatcha from "@/assets/menu/items/dirty-matcha.jpg";
+import iceMatchaLatte from "@/assets/menu/items/ice-matcha-latte.jpg";
+import grilledCheese from "@/assets/menu/items/grilled-cheese.jpg";
+import englishBreakfast from "@/assets/menu/items/english-breakfast.jpg";
+import truffleFries from "@/assets/menu/items/truffle-fries.jpg";
+import chickenPopcorn from "@/assets/menu/items/chicken-popcorn.jpg";
 
-// Maps sub-category title to a representative image
-export const subCategoryImages: Record<string, string> = {
-  // Cakes
-  "Pound Cakes": poundCake,
-  "Cheesecakes": cheesecake,
-  "Whole Cakes": wholeCake,
-  // Pastries
-  "Croissants": croissant,
-  "Specialty": pastrySpecialty,
-  // Drinks
-  "Classic Coffee": coffee,
-  "Flavoured Latte": coffee,
-  "Tea Selection": tea,
-  "Matcha Series": matcha,
-  "Classic Blended": blended,
-  "Mocktail Series": mocktail,
-  "Coldbrew Series": coldbrew,
-  "Tea Series": tea,
-  "Lonely But Famous": hotChocolate,
-  // Food
-  "The Breakfast Club": breakfast,
-  "Light Bites": fries,
-  "The Perfect Brunch": brunch,
-  "Sandwiches Club": sandwich,
-  "Italian Noodles": pasta,
-  "The Hunger Solution": sandwich,
-  "Main Courses": riceBowl,
-  "Flavorful Chicken": chicken,
-  "The Toast Section": frenchToast,
-  "The Sweets": frenchToast,
+// Maps item name to its unique image
+export const itemImages: Record<string, string> = {
+  "Earl Grey Pound Cake": earlGreyPoundCake,
+  "Cookies & Cream Pound Cake": cookiesCreamPoundCake,
+  "Basque Cheesecake": basqueCheesecake,
+  "Tiramisu Cheesecake": tiramisuCheesecake,
+  "Almond Croissant": almondCroissant,
+  "Triple Cheese Croissant": tripleCheeseCroissant,
+  "Red Velvet Bliss": redVelvetBliss,
+  "Crookie": crookie,
+  "Flat White": flatWhite,
+  "Cafe Latte": cafeLatte,
+  "Dirty Matcha": dirtyMatcha,
+  "Ice Matcha Latte": iceMatchaLatte,
+  "Grilled Cheese": grilledCheese,
+  "English Breakfast": englishBreakfast,
+  "Parmesan Truffle French Fries": truffleFries,
+  "Chicken Popcorn": chickenPopcorn,
 };
 
-export function getItemImage(subCategoryTitle: string): string | undefined {
-  return subCategoryImages[subCategoryTitle];
+export function getItemImage(itemName: string): string | undefined {
+  return itemImages[itemName];
 }

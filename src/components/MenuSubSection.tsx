@@ -11,7 +11,6 @@ interface MenuSubSectionProps {
 const MenuSubSection = ({ subCategory }: MenuSubSectionProps) => {
   const { ref, isRevealed } = useScrollReveal({ threshold: 0.05 });
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
-  const image = getItemImage(subCategory.title);
 
   const handleToggleExpand = (index: number) => {
     setExpandedIndex((prev) => (prev === index ? null : index));
@@ -36,7 +35,7 @@ const MenuSubSection = ({ subCategory }: MenuSubSectionProps) => {
             item={item}
             index={i}
             isRevealed={isRevealed}
-            image={image}
+            image={getItemImage(item.name)}
             isExpanded={expandedIndex === i}
             onToggleExpand={() => handleToggleExpand(i)}
           />

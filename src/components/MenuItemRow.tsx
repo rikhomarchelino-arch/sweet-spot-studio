@@ -87,10 +87,8 @@ const MenuItemRow = ({ item, index, isRevealed, image, isExpanded, onToggleExpan
           )}
         </div>
         <div className="flex-shrink-0 text-right">
-          <span className="font-display text-xl md:text-2xl font-semibold">
-            <span className="text-primary text-sm mr-0.5">Rp</span>
-            <span className="text-foreground">{item.price}</span>
-            <span className="text-muted-foreground text-xs font-body">K</span>
+          <span className="font-display text-xl md:text-2xl font-semibold text-foreground">
+            {item.price}
           </span>
         </div>
 
