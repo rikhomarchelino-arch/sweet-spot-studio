@@ -1,0 +1,24 @@
+{
+  "customizations": [
+    { "token": "Google Fonts @import (Playfair Display + DM Sans)", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "light palette (:root background/foreground/card/popover/primary/secondary/muted/accent/destructive/border/input/ring)", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "dark palette (.dark background/foreground/card/popover/primary/secondary/muted/accent/destructive/border/input/ring)", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "--radius: 0.75rem", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "sidebar token set (light + dark)", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "--font-display", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "--font-body", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "--gradient-golden (light + dark)", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "--shadow-card (light + dark)", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "--shadow-glow (light + dark)", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "universal color/border/shadow transition rule", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "body font-family + heading font-family base rules", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "font-display utility", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "font-body utility", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "marquee keyframes + .animate-marquee", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": ".no-scrollbar utility", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "smooth scroll (html)", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "custom webkit scrollbar styles", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "fontFamily.display / fontFamily.body config", "source": "tailwind.config.ts", "reappliedIn": "src/styles.css" },
+    { "token": "borderRadius sm/md/lg = var(--radius) scale", "source": "tailwind.config.ts", "reappliedIn": "src/styles.css" }
+  ]
+}
