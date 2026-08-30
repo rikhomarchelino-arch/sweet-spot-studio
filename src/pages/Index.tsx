@@ -1,15 +1,14 @@
 import { useEffect } from "react";
-import { useOutletContext } from "react-router-dom";
 import HeroSection from "@/components/HeroSection";
 import MenuSection from "@/components/MenuSection";
 import AboutSection from "@/components/AboutSection";
 import FAQSection from "@/components/FAQSection";
 import ReviewsSection from "@/components/ReviewsSection";
 import FooterMarquee from "@/components/FooterMarquee";
+import { useActiveSection } from "@/components/ActiveSectionContext";
 
 const Index = () => {
-  const outletContext = useOutletContext<{ setActiveSection: (s: string) => void } | null>();
-  const setActiveSection = outletContext?.setActiveSection ?? (() => {});
+  const { setActiveSection } = useActiveSection();
 
   useEffect(() => {
     const sections = ["home", "menu", "about", "contact"];
