@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "@/lib/router-compat";
 import ScrollReveal from "@/components/ScrollReveal";
 import StaggerReveal from "@/components/StaggerReveal";
 import { menuCategories } from "@/data/menuData";

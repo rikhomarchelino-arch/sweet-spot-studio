@@ -1,4 +1,4 @@
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "@/lib/router-compat";
 import { Home, UtensilsCrossed, Info, Phone } from "lucide-react";
 import cakeIcon from "@/assets/CakeIcon.png";
 import croissantIcon from "@/assets/CroissantIcon.png";
