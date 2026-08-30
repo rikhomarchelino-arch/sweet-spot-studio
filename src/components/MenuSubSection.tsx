@@ -35,7 +35,7 @@ const MenuSubSection = ({ subCategory }: MenuSubSectionProps) => {
             item={item}
             index={i}
             isRevealed={isRevealed}
-            image={getItemImage(item.name)}
+            image={getItemImage(item.name) ?? ""}
             isExpanded={expandedIndex === i}
             onToggleExpand={() => handleToggleExpand(i)}
           />

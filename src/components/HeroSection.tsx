@@ -113,7 +113,7 @@ const HeroSection = () => {
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
+        if (entry?.isIntersecting) {
           setIsVisible(false);
           // Force a tick so framer-motion resets before replaying
           requestAnimationFrame(() => setIsVisible(true));
