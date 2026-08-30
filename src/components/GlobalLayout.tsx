@@ -1,6 +1,7 @@
-import { useState, useEffect } from "react";
-import { Outlet, useLocation } from "react-router-dom";
+import { useState, useEffect, useMemo } from "react";
+import { Outlet, useLocation } from "@/lib/router-compat";
 import SidebarNav from "./SidebarNav";
+import { ActiveSectionContext } from "./ActiveSectionContext";
 import { useTheme } from "@/hooks/useTheme";
 
 const GlobalLayout = () => {
@@ -21,16 +22,17 @@ const GlobalLayout = () => {
     }
   };
 
+  const contextValue = useMemo(() => ({ setActiveSection }), []);
+
   return (
-    <div className="min-h-screen bg-background transition-colors duration-300">
-      <SidebarNav
-        activeSection={activeSection}
-        onNavigate={handleNavigate}
-      />
-      <main className="md:ml-20 transition-colors duration-300">
-        <Outlet context={{ setActiveSection }} />
-      </main>
-    </div>
+    <ActiveSectionContext.Provider value={contextValue}>
+      <div className="min-h-screen bg-background transition-colors duration-300">
+        <SidebarNav activeSection={activeSection} onNavigate={handleNavigate} />
+        <main className="md:ml-20 transition-colors duration-300">
+          <Outlet />
+        </main>
+      </div>
+    </ActiveSectionContext.Provider>
   );
 };
 
