@@ -105,7 +105,9 @@ export function useSearchParams(): [URLSearchParams, (init: URLSearchParams | Re
             : new URLSearchParams(init);
       const searchObj: Record<string, string> = {};
       next.forEach((v, k) => { searchObj[k] = v; });
-      nav({ to: live.pathname, search: searchObj as never, replace: opts?.replace });
+      const navOpts: Record<string, unknown> = { to: live.pathname, search: searchObj };
+      if (opts?.replace !== undefined) navOpts["replace"] = opts.replace;
+      nav(navOpts as never);
     },
     [nav, router],
   );
