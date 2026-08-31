@@ -128,19 +128,13 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps>(function Link(
   ref,
 ) {
   const { pathname, search, hash } = parseTo(to);
-  return (
-    <TSLink
-      ref={ref as never}
-      to={pathname as never}
-      search={search as never}
-      hash={hash}
-      replace={replace}
-      state={state as never}
-      {...((rest ?? {}) as Record<string, unknown>)}
-    >
-      {children}
-    </TSLink>
-  );
+  const props: Record<string, unknown> = { ...(rest ?? {}), ref, to: pathname };
+  if (search) props["search"] = search;
+  if (hash) props["hash"] = hash;
+  if (replace !== undefined) props["replace"] = replace;
+  if (state !== undefined) props["state"] = state;
+  const AnyLink = TSLink as unknown as (p: Record<string, unknown>) => JSX.Element;
+  return <AnyLink {...props}>{children}</AnyLink>;
 });
 
 
@@ -148,7 +142,13 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps>(function Link(
 
 export function Navigate({ to, replace, state }: { to: string; replace?: boolean; state?: unknown }) {
   const { pathname, search, hash } = parseTo(to);
-  return <TSNavigate to={pathname as never} search={search as never} hash={hash} state={state as never} replace={replace} />;
+  const props: Record<string, unknown> = { to: pathname };
+  if (search) props["search"] = search;
+  if (hash) props["hash"] = hash;
+  if (replace !== undefined) props["replace"] = replace;
+  if (state !== undefined) props["state"] = state;
+  const AnyNavigate = TSNavigate as unknown as (p: Record<string, unknown>) => JSX.Element;
+  return <AnyNavigate {...props} />;
 }
 
 // ---------- Outlet ----------
