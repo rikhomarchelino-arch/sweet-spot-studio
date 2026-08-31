@@ -13,20 +13,21 @@ import {
   Navigate as TSNavigate,
   Outlet as TSOutlet,
 } from "@tanstack/react-router";
-import { useMemo, useCallback, forwardRef, type ComponentProps, type ReactNode } from "react";
+import { useMemo, useCallback, forwardRef, type ComponentProps, type ReactNode, type ReactElement } from "react";
 
 // ---------- shared URL parsing ----------
 
 function parseTo(to: string): { pathname: string; search?: Record<string, string>; hash?: string } {
-  const [beforeHash, hashStr] = (to ?? "").split("#");
+  const [beforeHash = "", hashStr] = (to ?? "").split("#");
   const [pathname, searchStr] = beforeHash.split("?");
-  return {
+  const result: { pathname: string; search?: Record<string, string>; hash?: string } = {
     // react-router keeps the current path for search-only ("?a=1") and
     // hash-only ("#section") targets; TanStack's "." means current route.
     pathname: pathname || ".",
-    search: searchStr ? Object.fromEntries(new URLSearchParams(searchStr)) : undefined,
-    hash: hashStr || undefined,
   };
+  if (searchStr) result.search = Object.fromEntries(new URLSearchParams(searchStr));
+  if (hashStr) result.hash = hashStr;
+  return result;
 }
 
 // ---------- useNavigate ----------
@@ -47,13 +48,12 @@ export function useNavigate(): NavigateFn {
       return;
     }
     const { pathname, search, hash } = parseTo(to);
-    tsNav({
-      to: pathname,
-      search: search as never,
-      hash,
-      state: options?.state as never,
-      replace: options?.replace,
-    });
+    const opts: Record<string, unknown> = { to: pathname };
+    if (search) opts["search"] = search;
+    if (hash) opts["hash"] = hash;
+    if (options?.state !== undefined) opts["state"] = options.state;
+    if (options?.replace !== undefined) opts["replace"] = options.replace;
+    tsNav(opts as never);
   }, [tsNav, router]) as NavigateFn;
 }
 
@@ -105,7 +105,9 @@ export function useSearchParams(): [URLSearchParams, (init: URLSearchParams | Re
             : new URLSearchParams(init);
       const searchObj: Record<string, string> = {};
       next.forEach((v, k) => { searchObj[k] = v; });
-      nav({ to: live.pathname, search: searchObj as never, replace: opts?.replace });
+      const navOpts: Record<string, unknown> = { to: live.pathname, search: searchObj };
+      if (opts?.replace !== undefined) navOpts["replace"] = opts.replace;
+      nav(navOpts as never);
     },
     [nav, router],
   );
@@ -126,19 +128,13 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps>(function Link(
   ref,
 ) {
   const { pathname, search, hash } = parseTo(to);
-  return (
-    <TSLink
-      ref={ref as never}
-      to={pathname as never}
-      search={search as never}
-      hash={hash}
-      replace={replace}
-      state={state as never}
-      {...((rest ?? {}) as Record<string, unknown>)}
-    >
-      {children}
-    </TSLink>
-  );
+  const props: Record<string, unknown> = { ...(rest ?? {}), ref, to: pathname };
+  if (search) props["search"] = search;
+  if (hash) props["hash"] = hash;
+  if (replace !== undefined) props["replace"] = replace;
+  if (state !== undefined) props["state"] = state;
+  const AnyLink = TSLink as unknown as (p: Record<string, unknown>) => ReactElement;
+  return <AnyLink {...props}>{children}</AnyLink>;
 });
 
 
@@ -146,7 +142,13 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps>(function Link(
 
 export function Navigate({ to, replace, state }: { to: string; replace?: boolean; state?: unknown }) {
   const { pathname, search, hash } = parseTo(to);
-  return <TSNavigate to={pathname as never} search={search as never} hash={hash} state={state as never} replace={replace} />;
+  const props: Record<string, unknown> = { to: pathname };
+  if (search) props["search"] = search;
+  if (hash) props["hash"] = hash;
+  if (replace !== undefined) props["replace"] = replace;
+  if (state !== undefined) props["state"] = state;
+  const AnyNavigate = TSNavigate as unknown as (p: Record<string, unknown>) => ReactElement;
+  return <AnyNavigate {...props} />;
 }
 
 // ---------- Outlet ----------
