@@ -13,7 +13,7 @@ import {
   Navigate as TSNavigate,
   Outlet as TSOutlet,
 } from "@tanstack/react-router";
-import { useMemo, useCallback, forwardRef, type ComponentProps, type ReactNode } from "react";
+import { useMemo, useCallback, forwardRef, type ComponentProps, type ReactNode, type ReactElement } from "react";
 
 // ---------- shared URL parsing ----------
 
@@ -133,7 +133,7 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps>(function Link(
   if (hash) props["hash"] = hash;
   if (replace !== undefined) props["replace"] = replace;
   if (state !== undefined) props["state"] = state;
-  const AnyLink = TSLink as unknown as (p: Record<string, unknown>) => JSX.Element;
+  const AnyLink = TSLink as unknown as (p: Record<string, unknown>) => ReactElement;
   return <AnyLink {...props}>{children}</AnyLink>;
 });
 
@@ -147,7 +147,7 @@ export function Navigate({ to, replace, state }: { to: string; replace?: boolean
   if (hash) props["hash"] = hash;
   if (replace !== undefined) props["replace"] = replace;
   if (state !== undefined) props["state"] = state;
-  const AnyNavigate = TSNavigate as unknown as (p: Record<string, unknown>) => JSX.Element;
+  const AnyNavigate = TSNavigate as unknown as (p: Record<string, unknown>) => ReactElement;
   return <AnyNavigate {...props} />;
 }
 
