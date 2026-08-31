@@ -48,13 +48,12 @@ export function useNavigate(): NavigateFn {
       return;
     }
     const { pathname, search, hash } = parseTo(to);
-    tsNav({
-      to: pathname,
-      search: search as never,
-      hash,
-      state: options?.state as never,
-      replace: options?.replace,
-    });
+    const opts: Record<string, unknown> = { to: pathname };
+    if (search) opts["search"] = search;
+    if (hash) opts["hash"] = hash;
+    if (options?.state !== undefined) opts["state"] = options.state;
+    if (options?.replace !== undefined) opts["replace"] = options.replace;
+    tsNav(opts as never);
   }, [tsNav, router]) as NavigateFn;
 }
 
