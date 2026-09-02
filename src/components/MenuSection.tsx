@@ -5,12 +5,12 @@ import { menuCategories } from "@/data/menuData";
 
 const MenuSection = () => {
   return (
-    <section id="menu" className="py-20 md:py-28 px-6 md:px-12">
+    <section id="menu" className="py-20 md:py-28 px-6 md:px-12 bg-maroon text-maroon-foreground">
       <div className="max-w-6xl mx-auto">
         <ScrollReveal>
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/40 text-primary text-sm font-body mb-8">
             <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-            Our Menu
+            From the Counter
           </span>
         </ScrollReveal>
 
@@ -19,7 +19,7 @@ const MenuSection = () => {
             <Link
               key={cat.slug}
               to={`/menu/${cat.slug}`}
-              className="group relative overflow-hidden rounded-xl aspect-[16/10] cursor-pointer block"
+               className="group relative overflow-hidden rounded-lg aspect-[16/10] cursor-pointer block border border-cafe-cream/15"
               style={{ boxShadow: "var(--shadow-card)" }}
             >
               <img
@@ -27,12 +27,12 @@ const MenuSection = () => {
                 alt={cat.name}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/30 to-transparent" />
+               <div className="absolute inset-0 bg-linear-to-t from-maroon via-maroon/25 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-6">
-                <h3 className="font-display text-2xl md:text-3xl font-semibold text-foreground">
+                 <h3 className="font-display text-2xl md:text-3xl font-semibold text-maroon-foreground">
                   {cat.name}
                 </h3>
-                <p className="mt-1 text-sm text-foreground/60 font-body max-w-xs opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500">
+                 <p className="mt-1 text-sm text-maroon-foreground/70 font-body max-w-xs opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500">
                   {cat.description}
                 </p>
               </div>
