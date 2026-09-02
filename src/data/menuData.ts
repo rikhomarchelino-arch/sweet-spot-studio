@@ -28,7 +28,7 @@ export const menuCategories: MenuCategory[] = [
   {
     slug: "cakes",
     name: "Cakes",
-    description: "Indulge in our handcrafted cakes and cheesecakes, where each slice melts with rich, premium flavor.",
+    description: "Signature pound cakes and cheesecakes, baked for coffee dates, shared tables, and a quiet afternoon pause.",
     image: categoryCakes,
     subCategories: [
       {
@@ -54,7 +54,7 @@ export const menuCategories: MenuCategory[] = [
   {
     slug: "pastries",
     name: "Pastries",
-    description: "Fun fact! All of our Pastries were made with special recipes by our Master Patissier with comfort and taste as a priority.",
+    description: "Croissants and laminated pastries, baked fresh for the café counter every day.",
     image: categoryPastries,
     subCategories: [
       {
@@ -81,7 +81,7 @@ export const menuCategories: MenuCategory[] = [
   {
     slug: "drinks",
     name: "Drinks",
-    description: "Refresh yourself with our handcrafted beverages, from classic coffee to artisanal blends designed to brighten your day.",
+    description: "Espresso classics, matcha, and crafted cold drinks for every kind of café ritual.",
     image: categoryDrinks,
     subCategories: [
       {
@@ -111,7 +111,7 @@ export const menuCategories: MenuCategory[] = [
   {
     slug: "food",
     name: "Food",
-    description: "From hearty breakfasts to satisfying mains, all crafted by our Master Patissier with comfort and taste as a priority.",
+    description: "Comforting breakfast plates and light bites made for slow mornings and long conversations.",
     image: categoryFood,
     subCategories: [
       {

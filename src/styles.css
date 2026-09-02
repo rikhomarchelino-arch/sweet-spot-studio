@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
@@ -48,13 +47,16 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
-  --font-display: 'Playfair Display', serif;
-  --font-body: 'DM Sans', sans-serif;
+  --color-maroon: var(--maroon);
+  --color-maroon-foreground: var(--maroon-foreground);
+  --color-cafe-cream: var(--cafe-cream);
+  --font-display: 'Outfit', sans-serif;
+  --font-body: 'Figtree', sans-serif;
 }
 
 :root {
-  --background: hsl(30 50% 92%);
-  --foreground: hsl(0 0% 10%);
+  --background: oklch(0.985 0.006 75);
+  --foreground: oklch(0.19 0.018 30);
 
   --card: hsl(0 0% 99%);
   --card-foreground: hsl(0 0% 10%);
@@ -62,8 +64,8 @@
   --popover: hsl(0 0% 99%);
   --popover-foreground: hsl(0 0% 10%);
 
-  --primary: hsl(40 90% 50%);
-  --primary-foreground: hsl(0 0% 10%);
+  --primary: oklch(0.68 0.13 79);
+  --primary-foreground: oklch(0.18 0.02 28);
 
   --secondary: hsl(30 8% 16%);
   --secondary-foreground: hsl(40 20% 92%);
@@ -92,8 +94,12 @@
   --sidebar-border: hsl(30 15% 82%);
   --sidebar-ring: hsl(40 90% 50%);
 
-  --font-display: 'Playfair Display', serif;
-  --font-body: 'DM Sans', sans-serif;
+  --maroon: oklch(0.34 0.12 20);
+  --maroon-foreground: oklch(0.97 0.01 75);
+  --cafe-cream: oklch(0.97 0.01 75);
+
+  --font-display: 'Outfit', sans-serif;
+  --font-body: 'Figtree', sans-serif;
 
   --gradient-golden: linear-gradient(135deg, hsl(40 90% 50%), hsl(35 85% 42%));
   --shadow-card: 0 4px 20px -4px hsl(30 20% 20% / 0.08);
@@ -101,23 +107,23 @@
 }
 
 .dark {
-  --background: hsl(30 10% 8%);
-  --foreground: hsl(40 20% 92%);
+  --background: oklch(0.16 0.018 28);
+  --foreground: oklch(0.965 0.012 76);
 
-  --card: hsl(30 8% 12%);
-  --card-foreground: hsl(40 20% 92%);
+  --card: oklch(0.205 0.028 25);
+  --card-foreground: oklch(0.965 0.012 76);
 
   --popover: hsl(30 8% 12%);
   --popover-foreground: hsl(40 20% 92%);
 
-  --primary: hsl(40 90% 50%);
-  --primary-foreground: hsl(30 10% 8%);
+  --primary: oklch(0.74 0.14 80);
+  --primary-foreground: oklch(0.17 0.02 28);
 
-  --secondary: hsl(30 8% 16%);
-  --secondary-foreground: hsl(40 20% 92%);
+  --secondary: oklch(0.31 0.095 20);
+  --secondary-foreground: oklch(0.97 0.01 75);
 
-  --muted: hsl(30 6% 18%);
-  --muted-foreground: hsl(35 10% 55%);
+  --muted: oklch(0.25 0.025 27);
+  --muted-foreground: oklch(0.72 0.025 69);
 
   --accent: hsl(40 90% 50%);
   --accent-foreground: hsl(30 10% 8%);
@@ -125,22 +131,25 @@
   --destructive: hsl(0 84.2% 60.2%);
   --destructive-foreground: hsl(210 40% 98%);
 
-  --border: hsl(30 8% 20%);
-  --input: hsl(30 8% 20%);
+  --border: oklch(0.31 0.04 25);
+  --input: oklch(0.31 0.04 25);
   --ring: hsl(40 90% 50%);
 
-  --sidebar-background: hsl(30 10% 6%);
+  --sidebar-background: oklch(0.2 0.065 20);
   --sidebar-foreground: hsl(40 20% 92%);
   --sidebar-primary: hsl(40 90% 50%);
   --sidebar-primary-foreground: hsl(30 10% 8%);
-  --sidebar-accent: hsl(30 8% 14%);
+  --sidebar-accent: oklch(0.29 0.09 20);
   --sidebar-accent-foreground: hsl(40 20% 92%);
-  --sidebar-border: hsl(30 8% 16%);
+  --sidebar-border: oklch(0.36 0.08 22);
   --sidebar-ring: hsl(40 90% 50%);
 
   --gradient-golden: linear-gradient(135deg, hsl(40 90% 50%), hsl(35 85% 42%));
   --shadow-card: 0 4px 24px -4px hsl(0 0% 0% / 0.4);
   --shadow-glow: 0 0 20px -4px hsl(40 90% 50% / 0.15);
+  --maroon: oklch(0.34 0.12 20);
+  --maroon-foreground: oklch(0.97 0.01 75);
+  --cafe-cream: oklch(0.965 0.012 76);
 }
 
 @layer base {
@@ -158,6 +167,7 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-body);
+    letter-spacing: 0;
   }
 
   h1, h2, h3, h4, h5, h6 {

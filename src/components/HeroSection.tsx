@@ -1,6 +1,8 @@
 import { useRef, useState, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
-import heroCake from "@/assets/hero-cake.jpg";
+import cafeInterior from "@/assets/cafe-interior.jpg";
+import cafeLatte from "@/assets/cafe-latte.jpg";
+import cafeCounter from "@/assets/cafe-counter.jpg";
 
 const AnimatedText = ({
   text,
@@ -128,43 +130,66 @@ const HeroSection = () => {
     return () => observer.disconnect();
   }, []);
 
-  const titleText = "THE POUND\nCAKE.";
+  const titleText = "THE POUND\nCAFE.";
   const titleCharCount = titleText.replace("\n", "").length;
   const subtitleDelay = titleCharCount * 0.03 + 0.3;
 
   return (
-    <section id="home" ref={sectionRef} className="relative w-full h-screen overflow-hidden">
-      <div className="absolute inset-0">
-        <img
-          src={heroCake}
-          alt="The Pound Cake - Premium Bakery"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
-      </div>
-
-      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6">
-        <h1 className="font-display text-6xl md:text-8xl lg:text-9xl font-bold tracking-tight text-foreground drop-shadow-2xl">
+    <section id="home" ref={sectionRef} className="relative min-h-[92vh] overflow-hidden bg-cafe-cream text-maroon">
+      <div className="mx-auto grid min-h-[92vh] max-w-7xl grid-cols-1 items-center gap-12 px-6 pb-16 pt-28 md:px-12 lg:grid-cols-12 lg:gap-14 lg:py-16">
+        <div className="relative z-10 lg:col-span-6">
+          <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-maroon/20 px-4 py-2 text-xs font-semibold uppercase text-maroon">
+            <span className="h-2 w-2 rounded-full bg-primary" />
+            Pastry & coffee · Semarang
+          </div>
+          <h1 className="font-display text-6xl font-black leading-[0.88] text-maroon md:text-8xl lg:text-9xl">
           <AnimatedText
             text="THE POUND"
             isVisible={isVisible}
           />
           <br />
-          <span className="text-primary">
+          <span className="text-maroon">
             <AnimatedText
-              text="CAKE."
+              text="CAFÉ."
               isVisible={isVisible}
               delay={"THE POUND".length * 0.03 + 0.15}
             />
           </span>
-        </h1>
-        <p className="mt-6 text-lg md:text-xl max-w-2xl text-foreground/80 font-body">
+          </h1>
+          <p className="mt-7 max-w-xl text-lg leading-relaxed text-maroon/80 md:text-xl">
           <AnimatedText
-            text="Crafting premium cakes & pastries delivering with love on every bite!"
+            text="Tempat untuk kopi yang diracik serius, pastry hangat, dan obrolan yang tidak perlu terburu-buru."
             isVisible={isVisible}
             delay={subtitleDelay}
           />
-        </p>
+          </p>
+          <div className="mt-9 flex flex-wrap gap-3">
+            <a href="#menu" className="rounded-full bg-maroon px-7 py-3.5 font-semibold text-maroon-foreground transition-transform hover:-translate-y-1">Lihat Menu</a>
+            <a href="/contact" className="rounded-full border-2 border-maroon px-7 py-3.5 font-semibold text-maroon transition-transform hover:-translate-y-1">Kunjungi Kami</a>
+          </div>
+          <div className="mt-10 flex items-center gap-7 border-t border-maroon/15 pt-7">
+            <div><p className="font-display text-2xl font-bold">07.00</p><p className="text-xs uppercase text-maroon/60">Buka setiap hari</p></div>
+            <span className="h-10 w-px bg-maroon/15" />
+            <div><p className="font-display text-2xl font-bold">4.9/5</p><p className="text-xs uppercase text-maroon/60">Cerita pelanggan</p></div>
+          </div>
+        </div>
+
+        <div className="relative grid grid-cols-2 gap-3 pb-8 lg:col-span-6">
+          <div className="space-y-3 pt-10">
+            <img src={cafeCounter} alt="Pastry segar di meja The Pound Cake" className="aspect-[3/4] w-full rounded-xl object-cover shadow-2xl transition-transform duration-500 hover:-translate-y-1" width={1200} height={1504} />
+            <div className="aspect-square rounded-xl bg-maroon p-6 text-maroon-foreground flex flex-col justify-end">
+              <p className="font-display text-2xl font-bold">Stay a little longer.</p>
+              <p className="mt-2 text-sm text-maroon-foreground/75">Dibuat untuk pagi pelan, meeting singkat, dan sore bersama.</p>
+            </div>
+          </div>
+          <div className="space-y-3">
+            <img src={cafeLatte} alt="Latte yang sedang diracik" className="aspect-square w-full rounded-xl object-cover shadow-2xl transition-transform duration-500 hover:-translate-y-1" width={1200} height={1200} />
+            <img src={cafeInterior} alt="Suasana hangat The Pound Cake café" className="aspect-[3/4] w-full rounded-xl object-cover shadow-2xl transition-transform duration-500 hover:-translate-y-1" width={1200} height={1504} />
+          </div>
+          <div className="absolute bottom-0 right-4 flex h-24 w-24 rotate-6 items-center justify-center rounded-full bg-primary p-4 text-center text-xs font-bold uppercase text-primary-foreground shadow-xl md:h-28 md:w-28">
+            Fresh daily<br />in Semarang
+          </div>
+        </div>
       </div>
     </section>
   );
